@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* fundo escuro elegante */
+    background: 
+        radial-gradient(circle at 90% 100%, rgba(255, 208, 0, 0.137), transparent 50%),
+        linear-gradient(130deg, #2c2c2c 10%, #000000 50%, #0f0f0f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.logoinicial {
+    text-align: center;
+}
+
+.logo {
+    width: 700%;
+    max-width: 700px;
+}
