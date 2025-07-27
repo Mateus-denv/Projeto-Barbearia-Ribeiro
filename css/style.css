@@ -21,3 +21,16 @@ body {
     width: 600%;
     max-width: 600px;
 }
+
+@media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 40px 30px;
+            }
+            
+            .login-title {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+}
+
