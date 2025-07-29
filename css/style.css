@@ -4,8 +4,8 @@ body {
     padding: 0;
     /* fundo escuro elegante */
     background: 
-        radial-gradient(circle at 90% 100%, rgba(255, 208, 0, 0.137), transparent 50%),
-        linear-gradient(130deg, #2c2c2c 10%, #000000 50%, #0f0f0f 100%);
+        radial-gradient(circle at 90% 100%, rgba(255, 208, 0, 0.137), transparent 40%),
+        linear-gradient(160deg, #2c2c2c 10%, #000000 50%, #0f0f0f 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,8 +18,8 @@ body {
 }
 
 .logo {
-    width: 600%;
-    max-width: 600px;
+    width: 500%;
+    max-width: 500px;
 }
 
 @media (max-width: 480px) {
