@@ -1,0 +1,90 @@
+.login-container {
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    font-weight: 500;        /* Negrito */
+    font-size: 50px
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    color: rgba(250, 250, 250, 0.726);
+    padding: 10px;
+    width: 200px;
+    background: transparent;          /* Fundo transparente */
+    border: none;                     /* Remove todas as bordas */
+    border-bottom:  2px solid #ffffff;  /* Só linha embaixo */
+    color: #cccccc;                 /* Texto cinza claro */
+    outline: none;                    /* Remove contorno azul */
+    transition: all 0.3s ease;
+    font-weight: 500;        /* Negrito */
+}
+input:hover {
+    background: rgba(170, 170, 170, 0.562);
+
+}
+
+button {
+    background: rgba(131, 131, 131, 0.233);
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 40px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: rgba(131, 131, 131, 0.4);
+}
+
+.logologin {
+    text-align: center; /* ou 'end' se quiser à direita */
+    margin-bottom: auto; /* espaço entre logo e título */
+}
+
+.logologin img {
+    width: 200;
+    max-width: 230px; /* corrija o '60x' para um valor em px */
+    height: auto; /* mantém a proporção */
+}
+
+a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #888;
+}
+
+.soubarbeiro{
+color: white;
+margin:  5px;
+}   
+
+.criarconta {
+    color: white;
+    margin: 30px;
+}
+
+.login, h1{
+    margin-bottom: 0px;
+}
+
+.login, h4{
+    font-weight: 200; 
+    margin-top: 0px;
+}
