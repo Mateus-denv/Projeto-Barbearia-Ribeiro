@@ -20,10 +20,10 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/imagens/fundo.png'); /* Substitua pela sua imagem */
+    background-image: url('/imagens/fundo.png');
     background-size: cover;
     background-position: center;
-    opacity: 1; /* Ajuste a transparência como quiser */
+    opacity: 1; /* Ajuste a transparência */
     z-index: -2;
 }
 
