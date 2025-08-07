@@ -58,18 +58,13 @@ body {
 
 /*Galeria de imagens de barbeiros*/
 .galeria {
-  width: 200px;
-  height: 400px; /* altura visível */
-  overflow-y: scroll; /* rolagem vertical */
-  background: #f1f1f1;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #999;
-}
 
-.galeria img {
-  width: 100%;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  object-fit: cover;
+    width: 200px;
+    height: 400px; /* altura visível */
+    overflow-y: scroll; /* rolagem vertical */
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #999;
 }
+s
