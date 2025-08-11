@@ -13,40 +13,34 @@
     h2 {
        font-weight: 400; 
     }
-    .button-3d {
-            background: linear-gradient(to bottom, #4CAF50, #45a049);
-            color: rgb(0, 0, 0);
+        /* Base do butão*/
+        .suporte-button {
+            color: rgb(255, 255, 255);
             width: 150px;
             height: 45px;
-            border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 
-                0 4px 0 #3e8e41,
-                0 8px 15px rgb(255, 255, 255);
-            transition: all 0.1s ease;
-            position: relative;
-            top: 0;
         }
 
-        .button-3d:hover {
-            top: 2px;
-            box-shadow: 
-                0 2px 0 #3e8e41,
-                0 4px 10px rgba(0, 0, 0, 0.3);
+        /*Verde*/
+        .suporte-button {
+            color: white;
+            background: rgba(0, 180, 0, 0.8);
+            border: 1px solid #069906;
         }
-
-        .button-3d:active {
-            top: 4px;
-            box-shadow: 
-                0 0px 0 #3e8e41,
-                0 2px 5px rgba(0, 0, 0, 0.3);
+        .suporte-button:hover {
+            color: white;
+            background: rgba(0, 180, 0, 0.999);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 180, 0, 0.4);
         }
 </style>
 
