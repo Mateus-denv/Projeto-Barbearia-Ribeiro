@@ -1,0 +1,70 @@
+/*Corpo da pagina */
+body {
+    background: black;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Jost", sans-serif;
+    position: relative;
+    
+    z-index: 0;
+    overflow: hidden;
+}
+
+.fundo-responsivo {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Imagem de fundo com opacidade via ::before*/
+.fundo-responsivo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagens/fundo-inicial-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Responsivo - imagem mobile*/
+@media (max-width: 480px) {
+  .fundo-responsivo::before {
+    background-image: url("../imagens/fundo-inicial-mobile.jpg");
+  }
+}
+
+/* Conteúdo dentro da div deve ter z-index maior */
+.fundo-responsivo > * {
+    position: relative;
+    z-index: 1;
+}
+
+.cabecalho {
+    font-size: 22px;
+    text-align: center;
+}
+
+/*Galeria de imagens de barbeiros*/
+.galeria {
+
+    width: 200px;
+    height: 400px; /* altura visível */
+    overflow-y: scroll; /* rolagem vertical */
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #999;
+}
+s
