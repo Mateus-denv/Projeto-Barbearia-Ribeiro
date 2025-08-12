@@ -1,5 +1,6 @@
 /*Corpo da pagina */
 body {
+    text-align: center;
     background: black;
     color: rgb(255, 255, 255);
     margin: 0;
@@ -38,12 +39,6 @@ body {
     z-index: 0;
 }
 
-/* Responsivo - imagem mobile*/
-@media (max-width: 480px) {
-  .fundo-responsivo::before {
-    background-image: url("../imagens/fundo-inicial-mobile.jpg");
-  }
-}
 
 /* Conteúdo dentro da div deve ter z-index maior */
 .fundo-responsivo > * {
@@ -51,14 +46,93 @@ body {
     z-index: 1;
 }
 
-h1{
+h1 {
     margin: auto;
 }
 
+h3 {
+    margin: auto;
+    font-weight: 400;
+}
+
 .cabecalho {
-    background: black;
+    position: relative;
     font-size: 22px;
     text-align: center;
+    border-radius: 2%;
+    border-bottom: 4px solid rgba(255, 176, 0, 1);
+    overflow: hidden; /* evita que o pseudo-elemento ultrapasse */
+    padding: 10px;
+    color: white; /* garante contraste */
+}
+
+.cabecalho::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.411);
+    z-index: -1; /* fica atrás do texto */
 }
 
 
+/* Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    min-height: 213px; /* garantir altura mínima da viewport */
+    width: 100%; /* ocupar toda largura disponível */
+    box-sizing: border-box; /* para evitar problemas de padding */
+    padding: 5px; /* opcional para dar espaço */
+}
+
+/* Botões */
+.login-button {
+    color: white;
+    width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 150, 243, 0.8);
+    border: 1px solid #1976D2;
+    transition: all 0.3s ease;
+}
+
+/* Estilos específicos */
+.button-agendamento,
+.button-localizacao,
+.button-barbeiros,
+.button-cortes {
+    background: rgba(33, 150, 243, 0.8);
+    border: 1px solid #1976D2;
+}
+
+.button-agendamento:hover,
+.button-localizacao:hover,
+.button-barbeiros:hover,
+.button-cortes:hover {
+    background: rgba(33, 150, 243, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.4);
+}
+
+/* No celular, mantém o empilhamento */
+@media (max-width: 480px) {
+    .fundo-responsivo::before {
+        background-image: url("../imagens/fundo-inicial-mobile.jpg");
+    }
+    .button-container {
+        max-width: 100%;
+    }
+}
