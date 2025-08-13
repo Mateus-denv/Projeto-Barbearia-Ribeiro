@@ -1,21 +1,31 @@
-/*Corpo da pagina */
-body {
-    text-align: center;
-    background: black;
-    color: rgb(255, 255, 255);
+/* ========== FONTE CUSTOMIZADA ========== */
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('/Font/EFCO\ Brookshire\ Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: oblique;
+}
+
+/* ========== RESET E BASE ========== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    background: #000;
+    color: #fff;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: "Jost", sans-serif;
-    position: relative;
-    
-    z-index: 0;
+    min-height: 100vh;
     overflow: hidden;
 }
 
+/* ========== BACKGROUND RESPONSIVO ========== */
 .fundo-responsivo {
     position: relative;
     width: 100vw;
@@ -23,116 +33,261 @@ body {
     overflow: hidden;
 }
 
-/* Imagem de fundo com opacidade via ::before*/
+/* Imagem de fundo */
 .fundo-responsivo::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../imagens/fundo-inicial-desktop.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    inset: 0; /* substitui top: 0; left: 0; width: 100%; height: 100%; */
+    background: url("/imagens/fundo-inicial-desktop.jpg") center/cover no-repeat;
     opacity: 0.5;
     z-index: 0;
 }
 
+/* Textura */
+.fundo-responsivo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/imagens/textura.png") center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
 
-/* Conteúdo dentro da div deve ter z-index maior */
+/* Conteúdo acima do background */
 .fundo-responsivo > * {
     position: relative;
     z-index: 1;
 }
 
-h1 {
-    margin: auto;
-}
-
-h3 {
-    margin: auto;
-    font-weight: 400;
-}
-
+/* ========== CABEÇALHO ========== */
 .cabecalho {
     position: relative;
-    font-size: 22px;
-    text-align: center;
-    border-radius: 2%;
-    border-bottom: 4px solid rgba(255, 176, 0, 1);
-    overflow: hidden; /* evita que o pseudo-elemento ultrapasse */
+    font-size: 30px;
     padding: 10px;
-    color: white; /* garante contraste */
+    border-radius: 8px; /* 2% era muito estranho */
+    border-bottom: 4px solid #ffb000;
+    color: #fff;
+    overflow: hidden;
 }
 
 .cabecalho::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.411);
-    z-index: -1; /* fica atrás do texto */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.41);
+    z-index: -1;
 }
 
-
-/* Container */
+/* ========== CONTAINER DE BOTÕES ========== */
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
     justify-content: center;
-    min-height: 213px; /* garantir altura mínima da viewport */
-    width: 100%; /* ocupar toda largura disponível */
-    box-sizing: border-box; /* para evitar problemas de padding */
-    padding: 5px; /* opcional para dar espaço */
+    min-height: 213px;
+    width: 100%;
+    padding: 5px;
 }
 
-/* Botões */
+/* ========== BOTÕES ========== */
 .login-button {
-    color: white;
-    width: 320px;
-    height: 45px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
+    color: #fff;
+    width: 800px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    /* Flexbox para centralizar texto */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(33, 150, 243, 0.8);
-    border: 1px solid #1976D2;
+    
+    /* Transição suave */
     transition: all 0.3s ease;
+    
+    /* Estilo padrão */
+    background: rgba(0, 0, 0, 0.51);
+    border: 1px solid #ffb000;
 }
 
-/* Estilos específicos */
-.button-agendamento,
-.button-localizacao,
-.button-barbeiros,
-.button-cortes {
-    background: rgba(33, 150, 243, 0.8);
-    border: 1px solid #1976D2;
-}
-
-.button-agendamento:hover,
-.button-localizacao:hover,
-.button-barbeiros:hover,
-.button-cortes:hover {
-    background: rgba(33, 150, 243, 1);
+.login-button:hover {
+    background: rgba(0, 0, 0, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.4);
+    box-shadow: 0 4px 8px rgba(255, 176, 0, 0.4);
 }
 
-/* No celular, mantém o empilhamento */
+/* ========== NOSSA HISTÓRIA ========== */
+.nossa-historia {
+    background: rgba(0, 0, 0, 0.296);
+    border: 1px solid #ffb000;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    
+    /* Centralização */
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+    z-index: 2;
+}
+
+.nossa-historia::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #000000 0%, transparent 50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.nossa-historia p {
+    font-size: 24px; /* x-large = ~24px */
+    margin: 0;
+}
+
+/* ========== TEXTO METÁLICO ========== */
+.metallic-text {
+    font-family: 'MinhaFonte', 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    
+    /* Efeito metálico */
+    background: linear-gradient(90deg, 
+        #fff 0%, #929292 20%, #6d6d6d 50%, #222222 70%, #2a2a2a 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    /* Animação */
+    animation: metallicSlow 8s linear infinite;
+    transition: transform 0.3s ease; /* 0.9s era muito lento */
+}
+
+.metallic-text:hover {
+    transform: scale(1.05);
+}
+
+@keyframes metallicSlow {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ========== ESTD - 2017 ========== */
+.estd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    gap: 15px;
+    font-size: 35px;
+    font-family: Arial, sans-serif;
+    color: #cfcfcf;
+}
+
+.bolinha {
+    width: 10px;
+    height: 10px;
+}
+
+/* ========== LOGO PURA ========== */
+.logopura {
+    display: inline-block;
+}
+
+.logopura img {
+    width: 250px;
+    height: auto; /* Mantém proporção */
+}
+
+.stars img{
+    width: 150px;
+}
+
+/* ========== TIPOGRAFIA ========== */
+h1, h3 {
+    margin: auto;
+}
+
+h3 {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 850px) {
+    .nossa-historia {
+        width: 90%;
+        padding: 15px 20px;
+    }
+    
+    .login-button {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .metallic-text {
+        font-size: 3em;
+    }
+}
+
 @media (max-width: 480px) {
     .fundo-responsivo::before {
         background-image: url("../imagens/fundo-inicial-mobile.jpg");
     }
-    .button-container {
-        max-width: 100%;
+
+    .cabecalho{
+        font-size: 20px;
     }
+    
+    .login-button {
+        width: 380px;
+        font-size: 16px;
+    }
+    
+    .metallic-text {
+        font-size: 40px; /* 2.5em */
+    }
+    
+    .estd p {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .logopura img {
+        width: 150px;
+    }
+    
+    .nossa-historia {
+        padding: 0px 10px 10px 10px;
+        border-radius: 8px;
+        max-width: 500px;
+    }
+    
+    .nossa-historia h3{
+        margin: auto;
+        font-size: 20px;
+    }
+
+    .stars img{
+        width: 100px;
+    }
+
 }
