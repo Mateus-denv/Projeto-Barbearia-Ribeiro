@@ -75,3 +75,13 @@
     .card:hover .card-overlay {
         transform: translateY(0);
     }
+
+    @media (max-width: 480px) {
+        .carousel > * {
+            flex: 0 0 100%;
+        }
+
+        .group{
+            animation: scrolling 15s linear infinite;
+        }
+    }

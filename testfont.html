@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Metálico Animado</title>
+    <style>
+        /* Carregando fonte local */
+        @font-face {
+            font-family: 'MinhaFonte';
+            src: url('./font/EFCO Brookshire Regular.ttf') format('truetype');
+            font-weight:900;
+            font-style: oblique;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #090d00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .metallic-text {
+            font-family: 'MinhaFonte', 'Oswald', sans-serif;
+            font-weight: bold;
+            font-size: 4em;
+            line-height: 1;
+            background: linear-gradient(90deg, 
+                #000 0%, #333 25%, #666 50%, #999 75%, #fff 100%);
+            background-size: 200% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: metallicSlow 8s linear infinite;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-decoration: none; /* Remove sublinhado do link */
+            display: inline-block; /* Para funcionar bem como link */
+            transition: transform 0.3s ease; /* Suave efeito hover */
+        }
+
+        .metallic-text:hover {
+            transform: scale(1.05); /* Cresce levemente no hover */
+        }
+
+        @keyframes metallicSlow {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="metallic-text">Nossa História</a>
+</body>
+</html>
