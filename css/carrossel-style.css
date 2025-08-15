@@ -77,7 +77,10 @@
         .carousel > * {
             flex: 0 0 100%;
         }
-
+        .card{
+            width: 150px;
+            height: 150px;
+        }
         .group{
             animation: scrolling 15s linear infinite;
         }
