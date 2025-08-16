@@ -59,26 +59,6 @@ body {
     z-index: 1;
 }
 
-/* ========== CABEÇALHO ========== */
-.cabecalho {
-    position: relative;
-    font-size: 30px;
-    padding: 10px;
-    border-radius: 8px; /* 2% era muito estranho */
-    border-bottom: 4px solid #ffb000;
-    color: #fff;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.cabecalho::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.41);
-    z-index: -1;
-}
-
 /* ========== CONTAINER DE BOTÕES ========== */
 .button-container {
     display: flex;
@@ -234,11 +214,8 @@ body {
 }
 
 /* ========== TIPOGRAFIA ========== */
-h1, h3 {
-    margin: auto;
-}
-
 h3 {
+    margin: auto;
     margin-top: 10px;
     font-weight: 400;
 }
@@ -267,11 +244,6 @@ h3 {
         background-image: url("/imagens/fundo-inicial-mobile.jpg");
     }
 
-    .cabecalho{
-        font-size: 20px;
-        z-index: 2;
-    }
-    
     .login-button {
         width: 380px;
         font-size: 16px;
