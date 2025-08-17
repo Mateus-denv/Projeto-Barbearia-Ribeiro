@@ -4,7 +4,7 @@
     border-radius: 8px; /* 2% era muito estranho */
     border-bottom: 4px solid #ffb000;
     overflow: hidden;
-    z-index: 2;
+    z-index: 26;
 }
 
 .nav h1{
@@ -43,7 +43,7 @@
     display: none;
     border: none;
     background: none;
-    border-top: 3px solid #fff;
+    border-top: 3px solid #ffb700;
     cursor: pointer;
 }
 
@@ -62,29 +62,37 @@
 @media (max-width: 750px) {
   .hamburger {
     display: block;
-    z-index: 90;
+    z-index: 27;
+  }
+
+  .nav-list img{
+    width: 150px;
   }
 
   .nav-list {
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.41);
+
+    background: rgba(0, 0, 0, 0.777);
+    backdrop-filter: blur(5px);
+    clip-path: circle(100px at 90% -15%);
     clip-path: circle(100px at 90% -15%);
     transition: 1s ease-out;
 
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 0;
+    gap: 1;
 
     pointer-events: none;
   }
   .cabecalho {
     font-size: 20px;
-}
+  }
   .nav-list a {
     font-size: 24px;
     opacity: 0;
@@ -115,7 +123,7 @@
 
   .nav.active .hamburger {
     position: fixed;
-    top: 26px;
+    top: 29px;
     right: 16px;
     border-top-color: transparent;
   }
