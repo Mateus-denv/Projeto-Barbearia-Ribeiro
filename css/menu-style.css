@@ -38,6 +38,11 @@
     text-decoration: none;
 }
 
+.nav-list img {
+    display: none;
+    border: none;
+    background: none;
+}
 
 .hamburger {
     display: none;
@@ -66,6 +71,7 @@
   }
 
   .nav-list img{
+    display: block;
     width: 150px;
   }
 
