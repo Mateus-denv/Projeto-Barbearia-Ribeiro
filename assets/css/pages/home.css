@@ -1,3 +1,6 @@
+@import url("/assets/css/components/carousel.css");
+@import url("/assets/css/components/menu.css");
+
 /* ========== FONTE CUSTOMIZADA ========== */
 @font-face {
     font-family: 'MinhaFonte';
@@ -14,12 +17,9 @@
 }
 
 body {
-    font-family: "Jost", sans-serif;
     background: #000;
     color: #fff;
     text-align: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
     min-height: 100vh;
     overflow: hidden;

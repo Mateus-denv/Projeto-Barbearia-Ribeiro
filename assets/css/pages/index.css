@@ -1,0 +1,27 @@
+@import url("/assets/css/components/backgrounds_logins.css");
+
+body {
+    align-items: center;
+    height: 100vh;
+}
+
+.logoinicial {
+    text-align: center;
+}
+
+.logo {
+    width: 500%;
+    max-width: 500px;
+}
+
+@media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 40px 30px;
+            }
+            
+            .login-title {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+}

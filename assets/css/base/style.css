@@ -1,73 +1,19 @@
+@font-face {
+  font-family: 'Jost';
+  src: url('/assets/Fonts/Jost-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* aceita do Thin até Black */
+  font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
+body{
     color: white;
-    margin: 0;
-    padding: 0;
+    background-color: gray;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
     font-family: "Jost", sans-serif;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
 }
-
-/* Imagem de fundo transparente */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/images/backgrounds/fundo.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 1; /* Ajuste a transparência */
-    z-index: -2;
-}
-
-/* Gradientes escuros sobre a imagem */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 10% 100%, rgba(0, 0, 0, 0.623), transparent 40%),radial-gradient(circle at 90% 100%, rgba(255, 208, 0, 0.11), transparent 25%),
-        radial-gradient(circle at 0% 75%, rgba(255, 208, 0, 0.055), transparent 25%),
-
-        radial-gradient(circle at 100% 20%, rgba(255, 230, 3, 0.068), transparent 25%),radial-gradient(circle at 50% 0%, rgba(2, 2, 2, 0.521), transparent 25%),
-        radial-gradient(circle at 40% 0%, rgba(255, 230, 3, 0.096), transparent 20%)
-        ;
-    z-index: -1;
-}
-
-.logoinicial {
-    text-align: center;
-}
-
-.logo {
-    width: 500%;
-    max-width: 500px;
-}
-
-@media (max-width: 480px) {
-            .login-container {
-                width: 90%;
-                padding: 40px 30px;
-            }
-            
-            .login-title {
-                font-size: 36px;
-                letter-spacing: 4px;
-            }
-}
-
