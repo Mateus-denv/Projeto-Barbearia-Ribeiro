@@ -1,10 +1,12 @@
+/* ========== menu ========== */
+
 .cabecalho {
     background: rgba(0, 0, 0, 0.41);
     padding-inline: 16px;
     border-radius: 8px; /* 2% era muito estranho */
     border-bottom: 4px solid #ffb000;
     overflow: hidden;
-    z-index: 26;
+    z-index: 10 !important; /* Forçar prioridade máxima */
 }
 
 .nav h1{
@@ -12,7 +14,6 @@
     align-items: center;
     margin-right: 90px;
     margin-left: 108px;
-    z-index: 3;
 }
 
 .nav {
@@ -28,7 +29,6 @@
     display: flex;
     gap: 32px;
     list-style: none;
-    z-index: 17;
 }
 
 .nav-list a{
@@ -67,7 +67,7 @@
 @media (max-width: 750px) {
   .hamburger {
     display: block;
-    z-index: 27;
+    z-index: 11 !important; /* Forçar prioridade máxima */
   }
 
   .nav-list img{
@@ -95,9 +95,11 @@
     gap: 1;
 
     pointer-events: none;
+    z-index: 10 !important; /* Forçar prioridade máxima */
   }
   .cabecalho {
     font-size: 20px;
+    z-index: 10 !important; /* Forçar prioridade máxima */
   }
   .nav-list a {
     font-size: 24px;
