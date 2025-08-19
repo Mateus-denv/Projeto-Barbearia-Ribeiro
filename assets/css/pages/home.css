@@ -1,7 +1,7 @@
 /* ========== FONTE CUSTOMIZADA ========== */
 @font-face {
     font-family: 'MinhaFonte';
-    src: url('/Font/EFCO\ Brookshire\ Regular.ttf') format('truetype');
+    src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype');
     font-weight: 900;
     font-style: oblique;
 }
@@ -38,7 +38,7 @@ body {
     content: "";
     position: absolute;
     inset: 0; /* substitui top: 0; left: 0; width: 100%; height: 100%; */
-    background: url("/imagens/fundo-inicial-desktop.jpg") center/cover no-repeat;
+    background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat;
     opacity: 0.5;
     z-index: 0;
 }
@@ -48,7 +48,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("/imagens/textura.png") center/cover no-repeat;
+    background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat;
     opacity: 0.15;
     z-index: 0;
 }
@@ -241,7 +241,7 @@ h3 {
 
 @media (max-width: 480px) {
     .fundo-responsivo::before {
-        background-image: url("/imagens/fundo-inicial-mobile.jpg");
+        background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
     }
 
     .login-button {
