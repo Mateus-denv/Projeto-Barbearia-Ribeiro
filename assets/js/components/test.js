@@ -1,31 +1,87 @@
-// Seleciona o elemento de fundo
-    const feature = document.querySelector(".feature");
+// ===== CONTROLE DOS EFEITOS DE SCROLL =====
+        let isScrolling = false;
 
-    // Obtém o tamanho inicial do background (em %)
-    let zoom = parseFloat(getComputedStyle(feature).backgroundSize);
-    let size = (zoom / 100) * feature.offsetWidth;
+        function updateHeroEffects() {
+            const scrollPosition = window.pageYOffset;
+            const heroSection = document.querySelector('.hero-section');
+            const heroBg = document.querySelector('.hero-bg');
+            const heroContent = document.querySelector('.hero-content');
+            
+            // Altura da seção hero
+            const heroHeight = heroSection.offsetHeight;
+            
+            // Progresso do scroll (0 a 1)
+            const scrollProgress = Math.min(scrollPosition / heroHeight, 1);
+            
+            // Efeito de zoom na imagem (1 a 1.3)
+            const scale = 1 + (scrollProgress * 0.3);
+            
+            // Efeito de desfoque (0 a 8px)
+            const blur = scrollProgress * 8;
+            
+            // Aplica os efeitos
+            heroBg.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            heroBg.style.filter = `blur(${blur}px) brightness(0.6)`;
+            
+            // Fade do conteúdo
+            const opacity = 1 - (scrollProgress * 1.2);
+            heroContent.style.opacity = Math.max(opacity, 0);
+            heroContent.style.transform = `translateY(${scrollProgress * 30}px)`;
+            
+            isScrolling = false;
+        }
 
-    window.addEventListener("scroll", () => {
-      let fromTop = window.scrollY;
-      let newSize = size - (fromTop / 3);
+        function handleScroll() {
+            if (!isScrolling) {
+                requestAnimationFrame(updateHeroEffects);
+                isScrolling = true;
+            }
+        }
 
-      if (newSize > feature.offsetWidth) {
-        feature.style.backgroundSize = newSize + "px";
-        feature.style.filter = `blur(${fromTop / 100}px)`;
-        feature.style.opacity = 1 - ((fromTop / document.documentElement.scrollHeight) * 1.3);
-      }
-    });
+        // ===== ANIMAÇÕES DOS ELEMENTOS =====
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
 
-    // Checa navegador (Chrome / Safari) - se não for, aplica "opaque"
-    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    const isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            // Observa elementos da jornada
+            document.querySelectorAll('.journey-item').forEach(item => {
+                observer.observe(item);
+            });
 
-    if (!isChrome && !isSafari) {
-      const opaque = document.createElement("div");
-      opaque.classList.add("opaque");
-      feature.appendChild(opaque);
+            // Observa elementos da galeria
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                observer.observe(item);
+            });
 
-      window.addEventListener("scroll", () => {
-        opaque.style.opacity = window.scrollY / 5000;
-      });
-    }
+            // Observa cards dos barbeiros
+            document.querySelectorAll('.barber-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // ===== SCROLL SUAVE PARA O INDICADOR =====
+        function setupSmoothScroll() {
+            const scrollDown = document.querySelector('.scroll-down');
+            scrollDown.addEventListener('click', () => {
+                document.querySelector('.journey-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // ===== INICIALIZAÇÃO =====
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            setupScrollAnimations();
+            setupSmoothScroll();
+            updateHeroEffects(); // Inicializa os efeitos
+        });

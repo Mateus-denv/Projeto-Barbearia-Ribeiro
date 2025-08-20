@@ -3,69 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efeito de Zoom e Desfoque ao Rolar</title>
+    <link rel="stylesheet" href="/assets/css/pages/nossahistoria.css">
+    <script defer src="/assets/js/components/test.js"></script>
+    <title>Ribeiro - Nossa Historia</title>
 </head>
 <body>
-    <div class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Experiência Visual Única</h1>
-            <p>Role para baixo e veja a magia acontecer</p>
-        </div>
-        <div class="scroll-indicator">
-            <div>↓ Role para baixo ↓</div>
-        </div>
+<!-- SEÇÃO HERO -->
+<section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <img src="/assets/images/logos/LogoNossaHistoria/logopura.png" alt="Logo Barbearia Ribeiro" class="hero-logo">
+        <h1 class="hero-title">Nossa História</h1>
+        <p class="hero-subtitle">Tradição, elegância e excelência desde o início</p>
     </div>
-    <div class="content-section">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-card">
-                    <h2>Efeito de Zoom</h2>
-                    <p>Conforme você rola a página, a imagem de fundo aumenta progressivamente, criando uma sensação de profundidade e movimento que envolve completamente o usuário.</p>
-                    <p>Este efeito é obtido através da manipulação da propriedade CSS transform: scale(), que é controlada dinamicamente pelo JavaScript baseado na posição do scroll.</p>
-                </div>
+    <div class="scroll-down">↓</div>
+</section>
+<!-- SEÇÃO DA JORNADA -->
+<section class="journey-section">
+    <div class="container">
+        <h2 class="section-title">A Jornada da Barbearia Ribeiro</h2>
+        
+        <div class="journey-grid">
+            <div class="journey-item">
+                <div class="journey-year">2010</div>
+                <h3 class="journey-title">O Começo de Tudo</h3>
+                <p class="journey-description">
+                    Com apenas uma cadeira e um grande sonho, Ribeiro abriu as portas de sua primeira barbearia. 
+                    O objetivo era simples: oferecer cortes clássicos com qualidade excepcional.
+                </p>
+            </div>
 
-                <div class="content-card">
-                    <h2>Desfoque Progressivo</h2>
-                    <p>Simultaneamente ao zoom, aplicamos um efeito de desfoque (blur) que intensifica conforme o usuário rola, criando uma transição suave entre as seções.</p>
-                    <p>O filtro CSS blur() é ajustado dinamicamente, proporcionando uma experiência visual moderna e envolvente que guia naturalmente a atenção do usuário.</p>
-                </div>
+            <div class="journey-item">
+                <div class="journey-year">2012</div>
+                <h3 class="journey-title">Crescimento Natural</h3>
+                <p class="journey-description">
+                    A clientela cresceu através do boca a boca. A reputação de excelência se espalhou, 
+                    tornando-se referência em cortes clássicos masculinos na região.
+                </p>
+            </div>
 
-                <div class="content-card">
-                    <h2>Performance Otimizada</h2>
-                    <p>Utilizamos técnicas de otimização como throttling no evento de scroll e transform3d para garantir animações suaves mesmo em dispositivos menos potentes.</p>
-                    <p>As transições são cuidadosamente calibradas para proporcionar fluidez sem comprometer a performance da página.</p>
-                </div>
+            <div class="journey-item">
+                <div class="journey-year">2015</div>
+                <h3 class="journey-title">Primeira Expansão</h3>
+                <p class="journey-description">
+                    Nova decoração, mais cadeiras e introdução de serviços premium como 
+                    barboterapia e tratamentos capilares especializados.
+                </p>
+            </div>
 
-                <div class="content-card">
-                    <h2>Design Responsivo</h2>
-                    <p>O efeito se adapta perfeitamente a diferentes tamanhos de tela, mantendo a qualidade visual tanto em desktop quanto em dispositivos móveis.</p>
-                    <p>Media queries e unidades responsivas garantem uma experiência consistente em todos os dispositivos.</p>
-                </div>
+            <div class="journey-item">
+                <div class="journey-year">2018</div>
+                <h3 class="journey-title">Equipe de Especialistas</h3>
+                <p class="journey-description">
+                    Chegada de barbeiros especializados que elevaram o padrão de atendimento. 
+                    Cada profissional trouxe expertise única para a equipe.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-year">2021</div>
+                <h3 class="journey-title">Era Digital</h3>
+                <p class="journey-description">
+                    Adaptação aos novos tempos com agendamentos online e presença digital, 
+                    mantendo sempre o atendimento personalizado.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-year">2024</div>
+                <h3 class="journey-title">Excelência Reconhecida</h3>
+                <p class="journey-description">
+                    Referência absoluta em cuidado masculino, unindo tradição clássica 
+                    às técnicas mais modernas do mercado.
+                </p>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="feature-section">
-        <div class="container">
-            <h2 class="feature-title">Tecnologia Moderna</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <h2>CSS3 Avançado</h2>
-                    <p>Utilizamos as mais recentes propriedades CSS3 incluindo transforms, filters, gradients e backdrop-filter para criar efeitos visuais impressionantes.</p>
-                </div>
+<!-- GALERIA -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Nossa Essência</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cortes Clássicos" class="gallery-image">
+                <h3 class="gallery-title">Cortes Clássicos</h3>
+                <p class="gallery-text">
+                    Especializados em cortes tradicionais executados com precisão artesanal 
+                    e atenção aos detalhes.
+                </p>
+            </div>
 
-                <div class="content-card">
-                    <h2>JavaScript Interativo</h2>
-                    <p>Script otimizado que detecta o scroll do usuário e aplica transformações em tempo real, criando uma experiência interativa e fluida.</p>
-                </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ambiente" class="gallery-image">
+                <h3 class="gallery-title">Ambiente Acolhedor</h3>
+                <p class="gallery-text">
+                    Espaço pensado para o relaxamento, com atmosfera que remete 
+                    às barbearias clássicas.
+                </p>
+            </div>
 
-                <div class="content-card">
-                    <h2>Design Glassmorphism</h2>
-                    <p>Elementos com efeito de vidro fosco usando backdrop-filter, criando uma estética moderna e elegante que está em alta no design atual.</p>
-                </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cuidado com Barba" class="gallery-image">
+                <h3 class="gallery-title">Cuidado Especializado</h3>
+                <p class="gallery-text">
+                    Serviços de barba com produtos premium e técnicas 
+                    que garantem resultados excepcionais.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Produtos" class="gallery-image">
+                <h3 class="gallery-title">Produtos Selecionados</h3>
+                <p class="gallery-text">
+                    Cuidadosa seleção dos melhores produtos para 
+                    cuidado capilar e facial masculino.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tradição" class="gallery-image">
+                <h3 class="gallery-title">Tradição & Modernidade</h3>
+                <p class="gallery-text">
+                    Combinamos técnicas clássicas com as tendências 
+                    mais atuais do mercado.
+                </p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Satisfação" class="gallery-image">
+                <h3 class="gallery-title">Satisfação Garantida</h3>
+                <p class="gallery-text">
+                    Nossa maior conquista é a confiança e satisfação 
+                    dos nossos clientes fiéis.
+                </p>
             </div>
         </div>
     </div>
+</section>
+
+<!-- BARBEIROS -->
+<section class="barbers-section">
+    <div class="container">
+        <h2 class="section-title">Nossos Mestres</h2>
+        
+        <div class="barbers-grid">
+            <div class="barber-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ribeiro" class="barber-photo">
+                <h3 class="barber-name">Ribeiro</h3>
+                <p class="barber-specialty">Fundador & Master Barber</p>
+                <p class="barber-description">
+                    Mais de 15 anos de experiência, especialista em cortes clássicos 
+                    e responsável pelos padrões de excelência.
+                </p>
+            </div>
+
+            <div class="barber-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Carlos" class="barber-photo">
+                <h3 class="barber-name">Carlos</h3>
+                <p class="barber-specialty">Especialista em Fade</p>
+                <p class="barber-description">
+                    Mestre nos degradês mais precisos, dominando técnicas 
+                    modernas para fade cuts perfeitos.
+                </p>
+            </div>
+
+            <div class="barber-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Miguel" class="barber-photo">
+                <h3 class="barber-name">Miguel</h3>
+                <p class="barber-specialty">Expert em Barba</p>
+                <p class="barber-description">
+                    Especializado em cuidados com barba, domina desde 
+                    designs clássicos até tendências modernas.
+                </p>
+            </div>
+
+            <div class="barber-card">
+                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Junior" class="barber-photo">
+                <h3 class="barber-name">Junior</h3>
+                <p class="barber-specialty">Cortes Modernos</p>
+                <p class="barber-description">
+                    Trouxe energia e conhecimento das tendências atuais, 
+                    mantendo sempre a qualidade tradicional.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- RODAPÉ -->
+<footer class="footer">
+    <div class="footer-content">
+        <img src="/assets/images/logos/LogoNossaHistoria/logopura.png" alt="Logo Barbearia Ribeiro" class="footer-logo">
+        
+        <h3 class="footer-title">Barbearia Ribeiro</h3>
+        
+        <div class="footer-links">
+            <a href="https://maps.google.com/..." target="_blank" class="footer-link">
+                <svg class="footer-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Nossa Localização
+            </a>
+            
+            <a href="https://instagram.com/barbeariaribeiro" target="_blank" class="footer-link">
+                <svg class="footer-icon" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @barbeariaribeiro
+            </a>
+            
+            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20agendar%20um%20horário" target="_blank" class="footer-link">
+                <svg class="footer-icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <p class="footer-copyright">
+            © 2024 Barbearia Ribeiro. Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
 </body>
 </html>

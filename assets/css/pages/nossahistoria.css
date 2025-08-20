@@ -1,42 +1,419 @@
+/* ===== FONTE PERSONALIZADA ===== */
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: oblique;
+}
 
+/* ===== RESET E CONFIGURAÇÕES BÁSICAS ===== */
 * {
-      box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    background-color: #1a1612;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== SEÇÃO HERO (TOPO) ===== */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background-image: url('/assets/images/gallery/test1.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0px) brightness(0.6);
+    transition: all 0.1s ease-out;
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    width: 280px;
+    height: auto;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+.hero-title {
+    font-family: MinhaFonte, serif;
+    font-size: 4.5rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #f5f5dc;
+    opacity: 0.9;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* Indicador de scroll */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d4af37;
+    font-size: 1.8rem;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ===== SEÇÃO DA JORNADA ===== */
+        .journey-section {
+            padding: 120px 20px;
+            position: relative;
+            /* Aqui você pode adicionar sua imagem texturizada */
+            background: linear-gradient(135deg, #2c241f 0%, #1a1612 100%);
+            /* background-image: url('sua-textura-aqui.jpg'); */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 22, 18, 0.85);
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: MinhaFonte, serif;
+            font-size: 3.5rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 25px auto;
+        }
+
+        /* ===== JORNADA SIMPLES ===== */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .journey-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .journey-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .journey-year {
+            font-family: MinhaFonte, serif;
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .journey-title {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .journey-description {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+/* ===== GALERIA CLEAN ===== */
+.gallery-section {
+    padding: 120px 20px;
+    background: #1a1612;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    margin-top: 80px;
+}
+
+.gallery-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.02);
+}
+
+.gallery-title {
+    font-size: 1.4rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.gallery-text {
+    color: #cccccc;
+    line-height: 1.6;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* ===== SEÇÃO DOS BARBEIROS ===== */
+.barbers-section {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #2c241f 0%, #1a1612 100%);
+}
+
+.barbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.barber-card {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.barber-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.barber-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px auto;
+    border: 2px solid #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.barber-card:hover .barber-photo {
+    transform: scale(1.05);
+}
+
+.barber-name {
+    font-family: MinhaFonte, serif;
+    font-size: 1.6rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.barber-specialty {
+    color: #f5f5dc;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.barber-description {
+    color: #cccccc;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+
+/* ===== RODAPÉ ===== */
+.footer {
+    background: #0f0e0b;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.footer-title {
+    font-family: MinhaFonte, serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.footer-link:hover {
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 30px auto;
+    opacity: 0.5;
+}
+
+.footer-copyright {
+    color: #888888;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
     }
-    body, html {
-      margin: 0;
-      padding: 0;
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
-    body {
-      background: #232323;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Timeline mobile */
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .timeline-item::before {
+        left: 14px;
+        right: auto;
+    }
+    
+    .timeline-content {
+        max-width: 100%;
     }
 
-    .feature {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding-top: 50%;
-      background: url("https://s3.nikecdn.com/pass/NikeBasketball/LeBron_Poster.jpg") center center no-repeat;
-      background-size: 250%;
-      box-shadow: inset 0 -50px 20px -20px #232323;
-      z-index: 0;
-      transition: filter 0.2s linear;
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      width: 90%;
-      margin: 0 auto;
-      padding-top: 45%;
+    .footer-link {
+        min-width: 200px;
+        justify-content: center;
     }
-
-    @media (min-width: 36.25em) {
-      .content {
-        width: 60%;
-        padding-top: 35%;
-      }
-    }
+}
