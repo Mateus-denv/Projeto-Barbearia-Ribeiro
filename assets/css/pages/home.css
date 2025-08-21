@@ -23,8 +23,9 @@ body {
     color: #fff;
     text-align: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
@@ -32,7 +33,7 @@ body {
 .fundo-responsivo {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -71,7 +72,7 @@ body {
     padding: 20px 40px;
     border-radius: 8px;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     
     /* Centralização */
     position: relative;
@@ -102,9 +103,8 @@ body {
 .name-nossahistoria {
     font-family: 'MinhaFonte', 'Oswald', sans-serif;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 3em;
     line-height: 1;
-    letter-spacing: 0.1em;
     text-decoration: none;
     display: inline-block;
     text-align: center;
@@ -156,7 +156,7 @@ body {
 }
 
 .logopura img {
-    width: 250px;
+    width: 200px;
     height: auto; /* Mantém proporção */
 }
 
@@ -185,7 +185,7 @@ h3 {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
     .fundo-responsivo::before {
         background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
     }
