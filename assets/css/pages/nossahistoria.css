@@ -56,17 +56,17 @@ body {
 .hero-logo {
     width: 280px;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
 }
 
 .hero-title {
-    font-family: MinhaFonte, serif;
+    font-family: "Jost", sans-serif;;
     font-size: 4.5rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    letter-spacing: 3px;
+    font-weight: 400;
+    color:rgb(255, 179, 0);
+    margin-bottom: 0px;
+    letter-spacing: 0px;
 }
 
 .hero-subtitle {
@@ -83,7 +83,7 @@ body {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: #d4af37;
+    color:rgba(255, 178, 0, 1);
     font-size: 1.8rem;
     cursor: pointer;
     animation: bounce 2s infinite;
@@ -95,100 +95,104 @@ body {
 }
 
 /* ===== SEÇÃO DA JORNADA ===== */
-        .journey-section {
-            padding: 120px 20px;
-            position: relative;
-            /* Aqui você pode adicionar sua imagem texturizada */
-            background: linear-gradient(135deg, #2c241f 0%, #1a1612 100%);
-            /* background-image: url('sua-textura-aqui.jpg'); */
-            background-size: cover;
-            background-attachment: fixed;
-        }
+.journey-section {
+    padding: 120px 20px;
+    position: relative;
+    /* Aqui você pode adicionar sua imagem texturizada */
+    background-image: url('/assets/images/backgrounds/textura.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
 
-        .journey-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 22, 18, 0.85);
-            z-index: 1;
-        }
+.journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.761);
+    z-index: 1;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        .section-title {
-            font-family: MinhaFonte, serif;
-            font-size: 3.5rem;
-            color: #d4af37;
-            text-align: center;
-            margin-bottom: 80px;
-            position: relative;
-        }
+.section-title {
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color:rgba(255, 178, 0, 1);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: #d4af37;
-            margin: 25px auto;
-        }
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, 
+        #ff0000 0% 33.33%, 
+        #ffffff 33.33% 66.66%, 
+        #0036fb 66.66% 100%
+    );  
+    margin: 25px auto;
+}
 
-        /* ===== JORNADA SIMPLES ===== */
-        .journey-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+/* ===== JORNADA SIMPLES ===== */
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-        .journey-item {
-            text-align: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
+.journey-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
 
-        .journey-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.journey-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .journey-year {
-            font-family: MinhaFonte, serif;
-            font-size: 3rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+.journey-year {
+    font-family: MinhaFonte, serif;
+    font-size: 3rem;
+    color:rgba(255, 178, 0, 1);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
-        .journey-title {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
+.journey-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
 
-        .journey-description {
-            color: #cccccc;
-            font-size: 1rem;
-            line-height: 1.7;
-            max-width: 320px;
-            margin: 0 auto;
-        }
+.journey-description {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 320px;
+    margin: 0 auto;
+}
 
-/* ===== GALERIA CLEAN ===== */
+/* ===== GALERIA CLEAN - NOSSA ESSENCIA ===== */
 .gallery-section {
     padding: 120px 20px;
-    background: #1a1612;
+    background: rgb(10, 10, 10);
 }
 
 .gallery-grid {
@@ -224,7 +228,7 @@ body {
 
 .gallery-title {
     font-size: 1.4rem;
-    color: #d4af37;
+    color:rgba(255, 178, 0, 1);
     margin-bottom: 15px;
     font-weight: 500;
 }
@@ -236,10 +240,10 @@ body {
     margin: 0 auto;
 }
 
-/* ===== SEÇÃO DOS BARBEIROS ===== */
+/* ===== SEÇÃO DOS BARBEIROS - NOSSOS MESTRES ===== */
 .barbers-section {
     padding: 120px 20px;
-    background: linear-gradient(135deg, #2c241f 0%, #1a1612 100%);
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
 }
 
 .barbers-grid {
@@ -261,31 +265,44 @@ body {
     transform: translateY(0);
 }
 
-.barber-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 25px auto;
-    border: 2px solid #d4af37;
-    transition: transform 0.3s ease;
+.barber-border {
+    padding: 2px; /* espessura da borda */
+    border-radius: 15%; /* mesmo arredondamento da foto */
+    background: linear-gradient(
+        to right,
+        #ff0000 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #0036fb 66.66% 100%
+    ); /* gradiente da borda */
+    display: inline-block;
 }
+
+.barber-photo {
+    width: 240px;
+    height: 300px;
+    border-radius: 15%;
+    object-fit: cover;
+    display: block;
+    border: none; /* remove a borda antiga */
+}
+
 
 .barber-card:hover .barber-photo {
     transform: scale(1.05);
+    
 }
 
 .barber-name {
     font-family: MinhaFonte, serif;
-    font-size: 1.6rem;
-    color: #d4af37;
+    font-size: 4rem;
+    color:rgba(255, 178, 0, 1);
     margin-bottom: 10px;
 }
 
 .barber-specialty {
     color: #f5f5dc;
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 10px;
     font-style: italic;
 }
 
@@ -299,10 +316,16 @@ body {
 
 /* ===== RODAPÉ ===== */
 .footer {
-    background: #0f0e0b;
+    background: linear-gradient(0deg, #ffffff3f 0%, #000000 100%);
     padding: 60px 20px 40px 20px;
     text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 5px solid transparent; /* precisa declarar */
+    border-image: linear-gradient(
+        to right,
+        #ff0000 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #0036fb 66.66% 100%
+    ) 1;
 }
 
 .footer-content {
@@ -311,7 +334,7 @@ body {
 }
 
 .footer-logo {
-    width: 120px;
+    width: 200px;
     height: auto;
     margin-bottom: 30px;
     opacity: 0.9;
@@ -320,7 +343,7 @@ body {
 .footer-title {
     font-family: MinhaFonte, serif;
     font-size: 1.8rem;
-    color: #d4af37;
+    color:rgba(255, 178, 0, 1);
     margin-bottom: 30px;
 }
 
@@ -346,7 +369,7 @@ body {
 }
 
 .footer-link:hover {
-    color: #d4af37;
+    color:rgba(255, 178, 0, 1);
     background: rgba(212, 175, 55, 0.1);
     transform: translateY(-2px);
 }
@@ -359,8 +382,12 @@ body {
 
 .footer-divider {
     width: 60px;
-    height: 1px;
-    background: #d4af37;
+    height: 2px;
+    background: linear-gradient(to right, 
+        #ff0000 0% 33.33%, 
+        #ffffff 33.33% 66.66%, 
+        #0036fb 66.66% 100%
+    ); 
     margin: 30px auto;
     opacity: 0.5;
 }
