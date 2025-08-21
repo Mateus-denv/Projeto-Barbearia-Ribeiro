@@ -9,8 +9,8 @@
 
     .group {
         display: flex;
-        gap: 20px;
-        padding-right: 20px;
+        gap: 15px;
+        padding-right: 15px;
         will-change: transform;
         animation: scrolling 13s linear infinite;
     }
