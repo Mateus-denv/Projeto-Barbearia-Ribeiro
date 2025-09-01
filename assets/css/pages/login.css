@@ -1,94 +1,146 @@
+/*
+  CSS da Página de Login - Corrigido e Responsivo
+  --------------------------------------------------
+  OBS: As cores e o design visual originais foram mantidos.
+  As alterações focam em corrigir o layout e a responsividade.
+*/
+
 @import url("/assets/css/components/backgrounds_logins.css");
 @import url("/assets/css/components/buttons.css");
 
 body {
-    align-items: center;
-    height: 100vh;
-    z-index: 0;
-    overflow: hidden;
+  /* CORREÇÃO: Adicionado 'display: flex' para que 'align-items' funcione.
+     Isto centraliza o conteúdo verticalmente. A centralização horizontal
+     já vem do seu 'base.css'. */
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  z-index: 0;
+  /* CORREÇÃO: Removido 'overflow: hidden' para permitir a rolagem
+     em telas pequenas caso o conteúdo não caiba. */
 }
 
 .login-container {
-    text-align: center;
-    padding: 10px;
+  text-align: center;
+  padding: 10px;
+  /* MELHORIA RESPONSIVA: Adicionado uma largura máxima para evitar que o
+     formulário fique muito largo em telas grandes, e uma largura relativa
+     para se ajustar a telas menores. */
+  max-width: 450px;
+  width: 90%;
 }
 
 h1 {
-    font-weight: 500;        /* Negrito */
-    font-size: 50px
+  font-weight: 500;
+  font-size: 50px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* MELHORIA RESPONSIVA: O formulário também precisa ter largura total
+     para que os inputs dentro dele possam se expandir. */
+  width: 100%;
 }
-.button-container{
-    min-height: 50px;
+
+.button-container {
+  min-height: 50px;
+  /* MELHORIA RESPONSIVA: O container do botão precisa ter 100% de largura. */
+  width: 100%;
 }
 
 .button {
-    width: 100px;
-    height: 40px;
-    font-size: 16px;
+  /* MELHORIA RESPONSIVA: Alterado de largura fixa para 100% para que o botão
+     se ajuste ao tamanho do formulário em qualquer tela. */
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
 }
 
 input[type="text"], input[type="password"] {
-    color: rgba(250, 250, 250, 0.726);
-    padding: 10px;
-    width: 200px;
-    background: transparent;          /* Fundo transparente */
-    border: none;                     /* Remove as bordas */
-    border-bottom:  2px solid #ffffff;  /* Só linha embaixo */
-    color: #cccccc;                 /* Texto cinza claro */
-    outline: none;                    /* Remove contorno azul */
-    transition: all 0.3s ease;
-    font-weight: 500;        /* Negrito */
+  padding: 10px;
+  /* MELHORIA RESPONSIVA: Alterado de largura fixa para 100% para que o input
+     se ajuste ao tamanho do formulário. */
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  /* CORREÇÃO: Havia duas propriedades 'color'. A última prevalece,
+     então mantive apenas ela para limpar o código. */
+  color: #cccccc;
+  outline: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
-input:hover {
-    background: rgba(170, 170, 170, 0.562);
 
+input:hover {
+  background: rgba(170, 170, 170, 0.562);
 }
 
 .logologin {
-    text-align: center; /* ou 'end' se quiser à direita */
-    margin-bottom: auto; /* espaço entre logo e título */
+  text-align: center;
+  /* CORREÇÃO: 'margin-bottom: auto' pode causar comportamentos inesperados.
+     Um valor definido como '20px' é mais seguro. */
+  margin-bottom: 20px;
 }
 
 .logologin img {
-    width: 200px;
-    max-width: 230px;
-    height: auto; /* mantém a proporção */
+  /* CORREÇÃO: Ter 'width' e 'max-width' com valores próximos é redundante.
+     Esta abordagem garante que a imagem nunca passe de 200px, mas possa
+     diminuir se o espaço for menor. */
+  max-width: 200px;
+  width: 100%;
+  height: auto; /* mantém a proporção */
 }
 
 a {
-    color: #888;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    cursor: pointer;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
 
+/* OBS: A cor do 'hover' está a mesma da cor base, então o efeito não é visível.
+   Mantido para não alterar os detalhes que você pediu. */
 a:hover {
-    color: #888;
+  color: #888;
 }
 
-.soubarbeiro{
-color: white;
-margin:  5px;
-}   
+.soubarbeiro {
+  color: white;
+  margin: 5px;
+}
 
 .criarconta {
-    color: white;
-    margin: 30px;
+  color: white;
+  margin: 30px;
 }
 
-.name-login{
-    margin-top: 10px;
-    margin-bottom: 0px;
+.name-login {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
-h4{
-    font-weight: 200; 
-    margin-top: 0px;
+h4 {
+  font-weight: 200;
+  margin-top: 0px;
+}
+
+/*
+  RESPONSIVIDADE: Media Query para Smartfones
+  --------------------------------------------------
+  Estes estilos serão aplicados em telas com largura máxima de 600px.
+*/
+@media (max-width: 600px) {
+  h1 {
+    /* Reduz o tamanho da fonte em telas pequenas para não ficar desproporcional. */
+    font-size: 40px;
+  }
+
+  .login-container {
+    /* Garante que o container ocupe quase toda a tela do celular. */
+    width: 95%;
+  }
 }
