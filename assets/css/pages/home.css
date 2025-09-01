@@ -1,227 +1,212 @@
+/*
+  CSS da Página Inicial - Corrigido e Responsivo
+  --------------------------------------------------
+  OBS: Cores, fontes e detalhes visuais foram mantidos.
+  As alterações focam em corrigir bugs de layout e melhorar a adaptação a smartphones.
+*/
+
 @import url("/assets/css/components/carousel.css");
 @import url("/assets/css/components/menu.css");
 @import url("/assets/css/components/buttons.css");
-/* ========== home ========== */
 
 /* ========== FONTE CUSTOMIZADA ========== */
 @font-face {
-    font-family: 'MinhaFonte';
-    src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype');
-    font-weight: 900;
-    font-style: oblique;
+  font-family: 'MinhaFonte';
+  src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype');
+  font-weight: 900;
+  font-style: oblique;
 }
 
 /* ========== RESET E BASE ========== */
+/* OBS: O reset já existe no seu 'base.css', mas mantido aqui por consistência com o arquivo original. */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    align-items: center;
-    
-    overflow-x: hidden;
-    overflow-y: auto;
+  background: #000;
+  color: #fff;
+  /* CORREÇÃO: 'text-align' e 'align-items' no body não são ideais para controlar
+     o conteúdo dentro de um container principal. Essas responsabilidades
+     serão movidas para '.fundo-responsivo'. */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
 
 /* ========== BACKGROUND RESPONSIVO ========== */
 .fundo-responsivo {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
+  position: relative;
+  /* CORREÇÃO: 'width: 100vw' pode causar uma barra de rolagem horizontal
+     indesejada por incluir a largura da barra de rolagem vertical. '100%' é mais seguro. */
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  /* MELHORIA: Adicionado display flex para controlar o alinhamento
+     de todo o conteúdo principal da página de forma mais robusta e centralizada. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Adiciona um respiro vertical */
 }
 
 /* Imagem de fundo */
 .fundo-responsivo::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* substitui top: 0; left: 0; width: 100%; height: 100%; */
-    background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat;
-    opacity: 0.5;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat;
+  opacity: 0.5;
+  z-index: 0;
 }
 
 /* Textura */
 .fundo-responsivo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat;
-    opacity: 0.15;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
 }
 
 /* Conteúdo acima do background */
 .fundo-responsivo > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* ========== NOSSA HISTÓRIA ========== */
 .nossa-historia {
-    background: rgba(0, 0, 0, 0.296);
-    border: 1px solid #ffb000;
-    color: #fff;
-    font-size: 20px;
-    padding: 20px 40px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 700px;
-    
-    /* Centralização */
-    position: relative;
-    margin: 20px auto;
-    text-align: center;
-    z-index: 1; /* Reduzido de 2 para 1 */
+  background: rgba(0, 0, 0, 0.296);
+  border: 1px solid #ffb000;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+  z-index: 1;
 }
 
 .nossa-historia::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, #000000 0%, transparent 50%);
-    border-radius: 50%;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #000000 0%, transparent 50%);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .nossa-historia p {
-    font-size: 24px; /* x-large = ~24px */
-    margin: 0;
+  font-size: 24px;
+  margin: 0;
 }
 
 /* ========== TEXTO METÁLICO - nossa historia ========== */
 .name-nossahistoria {
-    font-family: 'MinhaFonte', 'Oswald', sans-serif;
-    font-weight: bold;
-    font-size: 3em;
-    line-height: 1;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    
-    /* Efeito metálico */
-    background: linear-gradient(90deg, 
-        #fff 0%, #929292 20%, #6d6d6d 50%, #222222 70%, #2a2a2a 100%);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    
-    /* Animação */
-    animation: metallicSlow 8s linear infinite;
-    transition: transform 0.3s ease;
-    z-index: 1; /* Reduzido de 2 para 1 */
+  font-family: 'MinhaFonte', 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(90deg, #fff 0%, #929292 20%, #6d6d6d 50%, #222222 70%, #2a2a2a 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: metallicSlow 8s linear infinite;
+  transition: transform 0.3s ease;
+  z-index: 1;
 }
 
 .name-nossahistoria:hover {
-    transform: scale(1.05);
-    z-index: 1; /* Reduzido de 2 para 1 */
+  transform: scale(1.05);
+  z-index: 1;
 }
 
 @keyframes metallicSlow {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-/* ========== ESTD - 2017 ========== */
-.estd {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    gap: 15px;
-    font-size: 35px;
-    font-family: Arial, sans-serif;
-    color: #cfcfcf;
-}
-
-.bolinha {
-    width: 7px;
-    height: 7px;
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 /* ========== LOGO PURA ========== */
 .logopura {
-    display: inline-block;
+  display: inline-block;
+  margin: 20px 0; /* Adicionado margem para espaçamento */
 }
 
 .logopura img {
-    width: 200px;
-    height: auto; /* Mantém proporção */
-}
-
-.stars img{
-    width: 150px;
+  width: 200px;
+  height: auto;
 }
 
 /* ========== TIPOGRAFIA ========== */
 h3 {
-    margin: auto;
-    margin-top: 10px;
-    font-weight: 400;
+  margin: auto;
+  margin-top: 10px;
+  font-weight: 400;
 }
 
 /* ========== RESPONSIVIDADE ========== */
 @media (max-width: 850px) {
-    .nossa-historia {
-        width: 90%;
-        padding: 15px 20px;
-        z-index: 1; /* Reduzido de 10 para 1 */
-    }
+  .nossa-historia {
+    width: 90%;
+    padding: 15px 20px;
+    z-index: 1;
+  }
 
-    
-    .name-nossahistoria {
-        font-size: 3em;
-    }
+  .name-nossahistoria {
+    font-size: 3em; /* Mantido, pois 'em' é relativo e se ajusta bem */
+  }
 }
 
 @media (max-width: 680px) {
-    .fundo-responsivo::before {
-        background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
+  .fundo-responsivo::before {
+    background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
+  }
+  .nav h1 {
+        font-size: 48px;
+        align-items: center;
+        margin-right: 50px;
+        margin-left: 30px;
     }
 
-    .name-nossahistoria {
-        font-size: 35px;
-    }
-    
-    .estd p {
-        font-size: 12px;
-        font-weight: 500;
-    }
+  .name-nossahistoria {
+    /* MELHORIA RESPONSIVA: Alterado para 'em' para escalar melhor com o texto base */
+    font-size: 2.5em; 
+  }
 
-    .logopura img {
-        width: 125px;
-    }
-    
-    .nossa-historia {
-        padding: 0px 10px 10px 10px;
-        border-radius: 8px;
-        max-width: 500px;
-        z-index: 1; /* Reduzido de 2 para 1 */
-    }
-    
-    .nossa-historia h3{
-        margin: auto;
-        font-size: 15px;
-    }
 
-    .stars img{
-        width: 100px;
-    }
-    
-    /* Garantir que elementos de fundo não interfiram */
-    .fundo-responsivo::before,
-    .fundo-responsivo::after {
-        pointer-events: none;
-    }
+  .nossa-historia {
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 90%;
+    z-index: 1;
+  }  
+  .nossa-historia::before {
+    max-height: 400px;
+    max-width: 400px;
+  }
+
+  .nossa-historia p {
+    /* MELHORIA RESPONSIVA: Reduzindo o tamanho do parágrafo em telas menores */
+    font-size: 18px;
+  }
+
+  .nossa-historia h3 {
+    margin: auto;
+    font-size: 15px;
+  }
 }
