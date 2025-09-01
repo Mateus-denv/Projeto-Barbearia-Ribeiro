@@ -1,74 +1,87 @@
+/*
+  CSS dos Botões - Corrigido e Responsivo
+  --------------------------------------------------
+  OBS: Cores, bordas e efeitos foram mantidos.
+  As alterações focam em corrigir o bug da largura fixa.
+*/
+
 /* ========== CONTAINER DE BOTÕES ========== */
 .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    min-height: 213px;
-    width: 100%;
-    padding: 5px;
-    z-index: 10; /* Z-index alto para garantir clicabilidade */
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 213px;
+
+  /* CORREÇÃO: O container agora controla a largura máxima,
+     enquanto sua largura se ajusta ao espaço disponível. */
+  width: 100%;
+  max-width: 800px;
+  
+  padding: 5px;
+  position: relative;
+  
+  /* SIMPLIFICAÇÃO: Um z-index de 2 é suficiente para garantir que os botões
+     fiquem acima dos elementos de fundo (que geralmente têm z-index 0 ou 1). */
+  z-index: 2;
 }
 
 .button {
-    color: #fff;
-    width: 800px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
-    
-    /* Flexbox para centralizar texto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Transição suave */
-    transition: all 0.3s ease;
-    
-    /* Estilo padrão */
-    background: rgba(0, 0, 0, 0.51);
-    border: 1px solid #ffb000;
-    
-    /* Z-index alto para clicabilidade */
-    position: relative;
-    z-index: 15;
-    
-    /* Garantir que seja clicável em touch devices */
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(255, 176, 0, 0.3);
+  color: #fff;
+  
+  /* CORREÇÃO PRINCIPAL: A largura fixa foi trocada por 100%.
+     Agora o botão sempre ocupará todo o espaço do seu contêiner pai,
+     tornando-o perfeitamente responsivo. */
+  width: 100%;
+
+  height: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  /* Flexbox para centralizar texto (mantido) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Transição suave (mantido) */
+  transition: all 0.3s ease;
+  
+  /* Estilo padrão (mantido) */
+  background: rgba(0, 0, 0, 0.51);
+  border: 1px solid #ffb000;
+  
+  /* SIMPLIFICAÇÃO: O z-index e a posição no próprio botão são desnecessários,
+     pois o .button-container já gerencia o empilhamento na página. */
+  
+  /* Garantir que seja clicável em touch devices (mantido) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 176, 0, 0.3);
 }
 
 .button:hover,
 .button:active {
-    background: rgba(0, 0, 0, 0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 174, 0, 0.194);
+  background: rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 174, 0, 0.194);
 }
 
-@media  (max-width: 680px) {
-    .button {
-        width: 380px;
-        font-size: 16px;
-        min-height: 50px; /* Garantir altura mínima para touch */
-        z-index: 20; /* Z-index ainda maior no mobile */
-        position: relative;
-        
-        /* Melhorar experiência touch */
-        touch-action: manipulation;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: rgba(255, 176, 0, 0.3);
-    }
+@media (max-width: 680px) {
+  /* MELHORIA RESPONSIVA: Em telas pequenas, o container dos botões
+     não ficará colado nas bordas da tela, tendo um respiro. */
+  .button-container {
+    width: 90%;
+  }
+
+  .button {
+    /* CORREÇÃO: A largura fixa de 380px foi removida. A regra 'width: 100%' do estilo base já cuida da responsividade. */
+    font-size: 16px;
     
-    /* Container de botões no mobile */
-    .button-container {
-        z-index: 15;
-        position: relative;
-        /* Garantir que não há sobreposição */
-    }
+    /* LIMPEZA: 'min-height: 50px' era redundante, pois o botão já tem 'height: 50px'. */
+  }
 }
+
