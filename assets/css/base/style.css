@@ -6,14 +6,16 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  /* Adicionado como boa prática: faz com que padding e border não aumentem a largura dos elementos. */
+  box-sizing: border-box; 
 }
 
-body{
-    color: white;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    font-family: "Jost", sans-serif;
+body {
+  color: white;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  font-family: "Jost", sans-serif;
 }
