@@ -28,23 +28,16 @@
 body {
   background: #000;
   color: #fff;
-  /* CORREÇÃO: 'text-align' e 'align-items' no body não são ideais para controlar
-     o conteúdo dentro de um container principal. Essas responsabilidades
-     serão movidas para '.fundo-responsivo'. */
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 /* ========== BACKGROUND RESPONSIVO ========== */
-.fundo-responsivo {
+main{
   position: relative;
-  /* CORREÇÃO: 'width: 100vw' pode causar uma barra de rolagem horizontal
-     indesejada por incluir a largura da barra de rolagem vertical. '100%' é mais seguro. */
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  /* MELHORIA: Adicionado display flex para controlar o alinhamento
-     de todo o conteúdo principal da página de forma mais robusta e centralizada. */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +46,7 @@ body {
 }
 
 /* Imagem de fundo */
-.fundo-responsivo::before {
+main::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -63,7 +56,7 @@ body {
 }
 
 /* Textura */
-.fundo-responsivo::after {
+main::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -73,9 +66,24 @@ body {
 }
 
 /* Conteúdo acima do background */
-.fundo-responsivo > * {
+main > * {
   position: relative;
   z-index: 1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.41);
+    padding-inline: 16px;
+    border-bottom: 5px solid transparent; 
+    border-image: linear-gradient(
+        to right,
+        #1a1612 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #ffb700 66.66% 100%
+    ) 1;
+    border-radius: 8px; /* 2% era muito estranho */
+    overflow: hidden;
+    z-index: 10 !important; /* Forçar prioridade máxima */
 }
 
 /* ========== NOSSA HISTÓRIA ========== */
@@ -87,7 +95,7 @@ body {
   padding: 20px 40px;
   border-radius: 8px;
   width: 100%;
-  max-width: 700px;
+  max-width: 790px;
   position: relative;
   margin: 20px auto;
   text-align: center;
@@ -100,9 +108,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #000000 0%, transparent 50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #1a1612 0%, transparent 50%);
   border-radius: 50%;
   z-index: -1;
 }
@@ -154,9 +162,86 @@ body {
 
 /* ========== TIPOGRAFIA ========== */
 h3 {
-  margin: auto;
+  margin: 10px;
   margin-top: 10px;
   font-weight: 400;
+}
+
+.footer {
+    width: 100%;
+    background: linear-gradient(0deg, #ffffff00 0%, #1a1612 100%);
+    padding: 10px;
+    text-align: center;
+    border-top: 5px solid transparent; /* precisa declarar */
+    border-image: linear-gradient(
+        to right,
+        #1a1612 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #ffb700 66.66% 100%
+    ) 1;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-family: MinhaFonte, serif;
+    font-size: 1.8rem;
+    color:rgba(255, 178, 0, 1);
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.footer-link:hover {
+    color:rgba(255, 178, 0, 1);
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.footer-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right,        
+        #1a1612 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #ffb700 66.66% 100%
+    ); 
+    margin: 30px auto;
+    opacity: 0.5;
+}
+
+.footer-copyright {
+    color: #888888;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* ========== RESPONSIVIDADE ========== */
@@ -171,10 +256,14 @@ h3 {
     font-size: 3em; /* Mantido, pois 'em' é relativo e se ajusta bem */
   }
 }
-
 @media (max-width: 680px) {
-  .fundo-responsivo::before {
+  main::before {
     background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
+  }
+
+  header{
+    font-size: 20px;
+    z-index: 10 !important; /* Forçar prioridade máxima */
   }
   .nav h1 {
         font-size: 48px;
@@ -209,4 +298,15 @@ h3 {
     margin: auto;
     font-size: 15px;
   }
+
+  .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-link {
+        min-width: 200px;
+        justify-content: center;
+    }
 }
