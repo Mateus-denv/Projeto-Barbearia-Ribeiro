@@ -138,9 +138,9 @@ body {
     width: 60px;
     height: 2px;
     background: linear-gradient(to right, 
-        #ff0000 0% 33.33%, 
-        #ffffff 33.33% 66.66%, 
-        #0036fb 66.66% 100%
+        #1a1612 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #ffb700 66.66% 100%
     );  
     margin: 25px auto;
 }
@@ -243,7 +243,7 @@ body {
 /* ===== SEÇÃO DOS BARBEIROS - NOSSOS MESTRES ===== */
 .barbers-section {
     padding: 120px 20px;
-    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+    background: linear-gradient(135deg, #434343 0%, #1a1612 100%);
 }
 
 .barbers-grid {
@@ -270,9 +270,9 @@ body {
     border-radius: 15%; /* mesmo arredondamento da foto */
     background: linear-gradient(
         to right,
-        #ff0000 0% 33.33%,
+        #1a1612 0% 33.33%,
         #ffffff 33.33% 66.66%,
-        #0036fb 66.66% 100%
+        #ffb700 66.66% 100%
     ); /* gradiente da borda */
     display: inline-block;
 }
@@ -316,15 +316,15 @@ body {
 
 /* ===== RODAPÉ ===== */
 .footer {
-    background: linear-gradient(0deg, #ffffff3f 0%, #000000 100%);
+    background: linear-gradient(0deg, #ffffff3f 0%, #1a1612 100%);
     padding: 60px 20px 40px 20px;
     text-align: center;
     border-top: 5px solid transparent; /* precisa declarar */
     border-image: linear-gradient(
         to right,
-        #ff0000 0% 33.33%,
+        #1a1612 0% 33.33%,
         #ffffff 33.33% 66.66%,
-        #0036fb 66.66% 100%
+        #ffb700 66.66% 100%
     ) 1;
 }
 
@@ -384,9 +384,9 @@ body {
     width: 60px;
     height: 2px;
     background: linear-gradient(to right, 
-        #ff0000 0% 33.33%, 
-        #ffffff 33.33% 66.66%, 
-        #0036fb 66.66% 100%
+        #1a1612 0% 33.33%,
+        #ffffff 33.33% 66.66%,
+        #ffb700 66.66% 100%
     ); 
     margin: 30px auto;
     opacity: 0.5;
