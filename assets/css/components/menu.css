@@ -1,14 +1,4 @@
 /* ========== menu ========== */
-
-.cabecalho {
-    background: rgba(0, 0, 0, 0.41);
-    padding-inline: 16px;
-    border-radius: 8px; /* 2% era muito estranho */
-    border-bottom: 4px solid #ffb000;
-    overflow: hidden;
-    z-index: 10 !important; /* Forçar prioridade máxima */
-}
-
 .nav h1{
     font-size: 48px;
     align-items: center;
@@ -95,10 +85,6 @@
     gap: 1;
 
     pointer-events: none;
-    z-index: 10 !important; /* Forçar prioridade máxima */
-  }
-  .cabecalho {
-    font-size: 20px;
     z-index: 10 !important; /* Forçar prioridade máxima */
   }
   .nav-list a {
