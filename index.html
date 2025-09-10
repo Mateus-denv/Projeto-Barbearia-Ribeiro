@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="Barbearia" content="Barbearia por agendamento Simões Filho">
+  
   <title>Barbearia Ribeiro</title>
+  <!-- Seus links de CSS originais -->
   <link rel="stylesheet" href="/assets/css/base/style.css">
   <link rel="stylesheet" href="/assets/css/pages/index.css">
 </head>
@@ -14,11 +16,16 @@
   </div>
 
   <script>
+    /* Aguarda o evento de carregamento completo da página para então executar a função */
     window.addEventListener('load', function() {
-        // Redireciona para login após 3s
+        /*
+        * Configura um temporizador (timer) que executará o código interno
+        * após o tempo especificado em milissegundos.
+        */
         setTimeout(function() {
+            // Após 3 segundos, altera a URL da página, redirecionando o usuário
             window.location.href = './pages/login.html';
-        }, 3000);
+        }, 3000); /* Define o tempo de espera para 3000ms (3 segundos) */
     });
   </script>
 </body>
