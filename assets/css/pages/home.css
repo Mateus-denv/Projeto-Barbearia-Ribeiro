@@ -171,7 +171,7 @@ h3 {
 /* ====================== Footer ====================== */
 .footer {
   width: 100%; /* Largura total */
-  background: linear-gradient(0deg, #ffffff00 0%, #1a1612 100%); /* Fundo degradê */
+  background: linear-gradient(0deg, #ffffff00 0%, #000000 100%); /* Fundo degradê */
   padding: 10px; /* Padding interno */
   text-align: center; /* Centraliza conteúdo */
   border-top: 5px solid transparent; /* Bordas com gradiente */
