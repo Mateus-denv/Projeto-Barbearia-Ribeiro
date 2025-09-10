@@ -1,86 +1,91 @@
+/* Container do carrossel */
 .carrousel {
-    margin: 0 auto;
-    padding: 20px 0 30px 0;
-    width: 100%;
-    display: flex;
-    overflow: hidden; /* ou 'visible' se quiser mostrar além da borda */
-    }
-
-.group {
-    display: flex;
-    gap: 15px;
-    padding-right: 15px;
-    will-change: transform;
-    animation: scrolling 13s linear infinite;
+    margin: 0 auto;               /* Centraliza horizontalmente */
+    padding: 20px 0 30px 0;       /* Espaçamento interno (cima/baixo) */
+    width: 100%;                  /* Ocupa toda a largura disponível */
+    display: flex;                /* Flexbox para alinhar itens */
+    overflow: hidden;             /* Esconde elementos que saírem da borda */
 }
 
+/* Grupo de cards que se movimenta */
+.group {
+    display: flex;                /* Organiza os cards lado a lado */
+    gap: 15px;                    /* Espaço entre os cards */
+    padding-right: 15px;          /* Espaço extra à direita */
+    will-change: transform;       /* Otimização para animação */
+    animation: scrolling 13s linear infinite; /* Animação de rolagem contínua */
+}
+
+/* Animação do movimento lateral */
 @keyframes scrolling {
     0% {
-        transform: translateX(0);
+        transform: translateX(0);       /* Posição inicial */
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-100%);   /* Move todo o grupo para a esquerda */
     }
 }
 
+/* Card individual */
 .card {
     width: 200px;
     height: 200px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.938) 5px 10px 20px 0;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
+    border-radius: 20px;                /* Bordas arredondadas */
+    box-shadow: rgba(0, 0, 0, 0.938) 5px 10px 20px 0; /* Sombra */
+    overflow: hidden;                   /* Esconde conteúdo que ultrapassar */
+    position: relative;                 /* Base para o overlay */
+    flex-shrink: 0;                     /* Impede o card de encolher */
 }
 
+/* Imagem dentro do card */
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%;                        /* Ocupa toda a largura do card */
+    height: 100%;                       /* Ocupa toda a altura */
+    object-fit: cover;                  /* Ajusta sem distorcer */
+    display: block;                     /* Remove espaçamento indesejado */
 }
 
-/* Fallback colors caso a imagem não carregue */
+/* Cores de fundo para fallback (se a imagem não carregar) */
 .card:nth-child(1) {
     background: #7958ff;
 }
-
 .card:nth-child(2) {
     background: #5d34f2;
 }
-
 .card:nth-child(3) {
     background: #4300da;
 }
 
-/* Overlay opcional para texto sobre imagem */
+/* Overlay para texto sobre o card */
 .card-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    background: linear-gradient(transparent, rgba(0,0,0,0.7)); /* Degradê */
     color: white;
     padding: 20px;
     font-size: large;
     font-weight: bold;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transform: translateY(100%);        /* Fica escondido fora da tela */
+    transition: transform 0.3s ease;    /* Animação suave */
 }
 
+/* Mostra overlay quando passar o mouse */
 .card:hover .card-overlay {
     transform: translateY(0);
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 480px) {
     .carousel > * {
-        flex: 0 0 100%;
+        flex: 0 0 100%;                 /* Cada item ocupa 100% da largura */
     }
-    .card{
+    .card {
         width: 150px;
-        height: 150px;
+        height: 150px;                  /* Cards menores */
     }
-    .group{
-        animation: scrolling 15s linear infinite;
+    .group {
+        animation: scrolling 15s linear infinite; /* Movimento mais lento */
     }
 }
