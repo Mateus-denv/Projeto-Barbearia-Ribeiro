@@ -1,312 +1,316 @@
-/*
-  CSS da Página Inicial - Corrigido e Responsivo
-  --------------------------------------------------
-  OBS: Cores, fontes e detalhes visuais foram mantidos.
-  As alterações focam em corrigir bugs de layout e melhorar a adaptação a smartphones.
-*/
-
+/* ====================== Imports ====================== */
+/* Importa estilos do carrossel */
 @import url("/assets/css/components/carousel.css");
+/* Importa estilos do menu */
 @import url("/assets/css/components/menu.css");
+/* Importa estilos dos botões */
 @import url("/assets/css/components/buttons.css");
 
-/* ========== FONTE CUSTOMIZADA ========== */
+/* ====================== Fonte customizada ====================== */
 @font-face {
-  font-family: 'MinhaFonte';
-  src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype');
-  font-weight: 900;
-  font-style: oblique;
+  font-family: 'MinhaFonte'; /* Nome da fonte */
+  src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype'); /* Caminho da fonte */
+  font-weight: 900; /* Peso da fonte */
+  font-style: oblique; /* Estilo oblíquo */
 }
 
-/* ========== RESET E BASE ========== */
-/* OBS: O reset já existe no seu 'base.css', mas mantido aqui por consistência com o arquivo original. */
+/* ====================== Reset e base ====================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Ajusta box model para incluir padding e border na largura */
 }
 
 body {
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-  overflow-y: auto;
+  background: #000; /* Cor de fundo preta */
+  color: #fff; /* Cor do texto branca */
+  overflow-x: hidden; /* Evita rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
 }
 
-/* ========== BACKGROUND RESPONSIVO ========== */
-main{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0; /* Adiciona um respiro vertical */
+/* ====================== Main e background ====================== */
+main {
+  position: relative; /* Para posicionamento dos pseudo-elementos */
+  width: 100%; /* Largura total */
+  min-height: 100vh; /* Altura mínima igual à viewport */
+  overflow: hidden; /* Evita scroll interno */
+  display: flex; /* Flex container */
+  flex-direction: column; /* Elementos em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 20px 0; /* Espaçamento vertical interno */
 }
 
-/* Imagem de fundo */
+/* Imagem de fundo principal */
 main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat;
-  opacity: 0.5;
-  z-index: 0;
+  content: ""; /* Elemento vazio */
+  position: absolute; /* Posicionamento absoluto */
+  inset: 0; /* Top, bottom, left, right = 0 */
+  background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat; /* Fundo com imagem centralizada e cover */
+  opacity: 0.5; /* Transparência */
+  z-index: 0; /* Camada abaixo do conteúdo */
 }
 
-/* Textura */
+/* Textura sobre a imagem */
 main::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat;
-  opacity: 0.15;
-  z-index: 0;
+  content: ""; /* Elemento vazio */
+  position: absolute; /* Posicionamento absoluto */
+  inset: 0; /* Top, bottom, left, right = 0 */
+  background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat; /* Fundo textura */
+  opacity: 0.15; /* Transparência baixa */
+  z-index: 0; /* Mesma camada da imagem */
 }
 
 /* Conteúdo acima do background */
 main > * {
-  position: relative;
-  z-index: 1;
+  position: relative; /* Relativo ao main */
+  z-index: 1; /* Fica acima do background */
 }
 
+/* ====================== Header ====================== */
 header {
-    background: rgba(0, 0, 0, 0.41);
-    padding-inline: 16px;
-    border-bottom: 5px solid transparent; 
-    border-image: linear-gradient(
-        to right,
-        #1a1612 0% 33.33%,
-        #ffffff 33.33% 66.66%,
-        #ffb700 66.66% 100%
-    ) 1;
-    border-radius: 8px; /* 2% era muito estranho */
-    overflow: hidden;
-    z-index: 10 !important; /* Forçar prioridade máxima */
+  background: rgba(0, 0, 0, 0.41); /* Fundo semitransparente */
+  padding-inline: 16px; /* Padding horizontal */
+  border-bottom: 5px solid transparent; /* Bordas com gradiente */
+  border-image: linear-gradient(
+      to right,
+      #1a1612 0% 33.33%,
+      #ffffff 33.33% 66.66%,
+      #ffb700 66.66% 100%
+  ) 1; /* Gradiente horizontal */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde overflow */
+  z-index: 10 !important; /* Prioridade máxima */
 }
 
-/* ========== NOSSA HISTÓRIA ========== */
+/* ====================== Nossa História ====================== */
 .nossa-historia {
-  background: rgba(0, 0, 0, 0.296);
-  border: 1px solid #ffb000;
-  color: #fff;
-  font-size: 20px;
-  padding: 20px 40px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 790px;
-  position: relative;
-  margin: 20px auto;
-  text-align: center;
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.296); /* Fundo semitransparente */
+  border: 1px solid #ffb000; /* Borda dourada */
+  color: #fff; /* Cor do texto */
+  font-size: 20px; /* Tamanho do texto */
+  padding: 20px 40px; /* Padding interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  width: 100%; /* Largura total */
+  max-width: 790px; /* Largura máxima */
+  position: relative; /* Para pseudo-elemento */
+  margin: 20px auto; /* Centraliza horizontalmente e espaço vertical */
+  text-align: center; /* Centraliza texto */
+  z-index: 1; /* Acima do background */
 }
 
+/* Pseudo-elemento de fundo circular */
 .nossa-historia::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #1a1612 0%, transparent 50%);
-  border-radius: 50%;
-  z-index: -1;
+  content: ""; /* Elemento vazio */
+  position: absolute; /* Posicionamento absoluto */
+  top: 50%; /* Centro vertical */
+  left: 50%; /* Centro horizontal */
+  transform: translate(-50%, -50%); /* Centraliza */
+  width: 400px; /* Largura */
+  height: 400px; /* Altura */
+  background: radial-gradient(circle, #1a1612 0%, transparent 50%); /* Gradiente radial */
+  border-radius: 50%; /* Circulo */
+  z-index: -1; /* Atrás do conteúdo */
 }
 
+/* Parágrafo dentro da nossa-historia */
 .nossa-historia p {
-  font-size: 24px;
-  margin: 0;
+  font-size: 24px; /* Tamanho do texto */
+  margin: 0; /* Remove margens */
 }
 
-/* ========== TEXTO METÁLICO - nossa historia ========== */
+/* ====================== Texto metálico ====================== */
 .name-nossahistoria {
-  font-family: 'MinhaFonte', 'Oswald', sans-serif;
-  font-weight: bold;
-  font-size: 3em;
-  line-height: 1;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  background: linear-gradient(90deg, #fff 0%, #929292 20%, #6d6d6d 50%, #222222 70%, #2a2a2a 100%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: metallicSlow 8s linear infinite;
-  transition: transform 0.3s ease;
-  z-index: 1;
+  font-family: 'MinhaFonte', 'Oswald', sans-serif; /* Fonte customizada */
+  font-weight: bold; /* Negrito */
+  font-size: 3em; /* Tamanho grande */
+  line-height: 1; /* Espaçamento entre linhas */
+  text-decoration: none; /* Sem underline */
+  display: inline-block; /* Inline para animação */
+  text-align: center; /* Centraliza texto */
+  background: linear-gradient(90deg, #fff 0%, #929292 20%, #6d6d6d 50%, #222222 70%, #2a2a2a 100%); /* Gradiente metálico */
+  background-size: 200% 100%; /* Ajuste de animação */
+  background-clip: text; /* Aplica gradiente ao texto */
+  -webkit-background-clip: text; /* Compatibilidade Webkit */
+  color: transparent; /* Esconde cor original */
+  animation: metallicSlow 8s linear infinite; /* Animação de movimento */
+  transition: transform 0.3s ease; /* Transição ao hover */
+  z-index: 1; /* Acima do background */
 }
 
+/* Hover do texto metálico */
 .name-nossahistoria:hover {
-  transform: scale(1.05);
-  z-index: 1;
+  transform: scale(1.05); /* Leve aumento */
+  z-index: 1; /* Mantém sobre o background */
 }
 
+/* Keyframes da animação metálica */
 @keyframes metallicSlow {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% { background-position: -200% 0; } /* Início da animação */
+  100% { background-position: 200% 0; } /* Fim da animação */
 }
 
-/* ========== LOGO PURA ========== */
+/* ====================== Logo Pura ====================== */
 .logopura {
-  display: inline-block;
-  margin: 20px 0; /* Adicionado margem para espaçamento */
+  display: inline-block; /* Inline para centralização */
+  margin: 20px 0; /* Espaço vertical */
 }
 
 .logopura img {
-  width: 200px;
-  height: auto;
+  width: 200px; /* Largura da logo */
+  height: auto; /* Mantém proporção */
 }
 
-/* ========== TIPOGRAFIA ========== */
+/* ====================== Tipografia ====================== */
 h3 {
-  margin: 10px;
-  margin-top: 10px;
-  font-weight: 400;
+  margin: 10px; /* Margem geral */
+  margin-top: 10px; /* Margem superior */
+  font-weight: 400; /* Peso da fonte */
 }
 
+/* ====================== Footer ====================== */
 .footer {
-    width: 100%;
-    background: linear-gradient(0deg, #ffffff00 0%, #1a1612 100%);
-    padding: 10px;
-    text-align: center;
-    border-top: 5px solid transparent; /* precisa declarar */
-    border-image: linear-gradient(
-        to right,
-        #1a1612 0% 33.33%,
-        #ffffff 33.33% 66.66%,
-        #ffb700 66.66% 100%
-    ) 1;
+  width: 100%; /* Largura total */
+  background: linear-gradient(0deg, #ffffff00 0%, #1a1612 100%); /* Fundo degradê */
+  padding: 10px; /* Padding interno */
+  text-align: center; /* Centraliza conteúdo */
+  border-top: 5px solid transparent; /* Bordas com gradiente */
+  border-image: linear-gradient(
+      to right,
+      #1a1612 0% 33.33%,
+      #ffffff 33.33% 66.66%,
+      #ffb700 66.66% 100%
+  ) 1;
 }
 
 .footer-content {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 .footer-title {
-    font-family: MinhaFonte, serif;
-    font-size: 1.8rem;
-    color:rgba(255, 178, 0, 1);
-    margin-bottom: 30px;
+  font-family: MinhaFonte, serif; /* Fonte personalizada */
+  font-size: 1.8rem; /* Tamanho do texto */
+  color: rgba(255, 178, 0, 1); /* Cor dourada */
+  margin-bottom: 30px; /* Espaço inferior */
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 40px;
-    flex-wrap: wrap;
+  display: flex; /* Flex container */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 40px; /* Espaçamento entre links */
+  margin: 40px; /* Margem geral */
+  flex-wrap: wrap; /* Permite quebrar linha */
 }
 
 .footer-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #cccccc;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.02);
+  display: flex; /* Flex container interno */
+  align-items: center; /* Centraliza vertical */
+  gap: 12px; /* Espaçamento interno */
+  color: #cccccc; /* Cor do texto */
+  text-decoration: none; /* Sem underline */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: all 0.3s ease; /* Animação suave */
+  padding: 12px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  background: rgba(255, 255, 255, 0.02); /* Fundo transparente */
 }
 
 .footer-link:hover {
-    color:rgba(255, 178, 0, 1);
-    background: rgba(212, 175, 55, 0.1);
-    transform: translateY(-2px);
+  color: rgba(255, 178, 0, 1); /* Cor dourada ao hover */
+  background: rgba(212, 175, 55, 0.1); /* Fundo hover */
+  transform: translateY(-2px); /* Levanta link */
 }
 
 .footer-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
+  width: 20px; /* Largura do ícone */
+  height: 20px; /* Altura do ícone */
+  fill: currentColor; /* Herda cor do link */
 }
 
 .footer-divider {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right,        
-        #1a1612 0% 33.33%,
-        #ffffff 33.33% 66.66%,
-        #ffb700 66.66% 100%
-    ); 
-    margin: 30px auto;
-    opacity: 0.5;
+  width: 60px; /* Largura da linha */
+  height: 2px; /* Altura da linha */
+  background: linear-gradient(to right,        
+      #1a1612 0% 33.33%,
+      #ffffff 33.33% 66.66%,
+      #ffb700 66.66% 100%
+  ); 
+  margin: 30px auto; /* Centraliza horizontalmente */
+  opacity: 0.5; /* Transparência */
 }
 
 .footer-copyright {
-    color: #888888;
-    font-size: 0.9rem;
-    opacity: 0.8;
+  color: #888888; /* Cor do texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  opacity: 0.8; /* Transparência */
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ====================== Responsividade ====================== */
 @media (max-width: 850px) {
+  /* Ajuste da seção nossa-historia */
   .nossa-historia {
-    width: 90%;
-    padding: 15px 20px;
-    z-index: 1;
+    width: 90%; /* Largura reduzida */
+    padding: 15px 20px; /* Padding menor */
+    z-index: 1; /* Mantém sobre background */
   }
 
   .name-nossahistoria {
-    font-size: 3em; /* Mantido, pois 'em' é relativo e se ajusta bem */
+    font-size: 3em; /* Mantido tamanho relativo */
   }
 }
+
 @media (max-width: 680px) {
+  /* Fundo mobile */
   main::before {
     background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
   }
 
   header{
-    font-size: 20px;
-    z-index: 10 !important; /* Forçar prioridade máxima */
+    font-size: 20px; /* Ajuste do header */
+    z-index: 10 !important; /* Força prioridade máxima */
   }
+
   .nav h1 {
-        font-size: 48px;
-        align-items: center;
-        margin-right: 50px;
-        margin-left: 30px;
-    }
+    font-size: 48px; /* Ajuste título nav */
+    align-items: center; 
+    margin-right: 50px;
+    margin-left: 30px;
+  }
 
   .name-nossahistoria {
-    /* MELHORIA RESPONSIVA: Alterado para 'em' para escalar melhor com o texto base */
-    font-size: 2.5em; 
+    font-size: 2.5em; /* Ajuste texto metálico */
   }
 
-
   .nossa-historia {
-    padding: 10px 15px;
-    border-radius: 8px;
-    max-width: 90%;
+    padding: 10px 15px; /* Padding reduzido */
+    border-radius: 8px; /* Mantido borda arredondada */
+    max-width: 90%; /* Largura máxima adaptável */
     z-index: 1;
   }  
+
   .nossa-historia::before {
-    max-height: 400px;
+    max-height: 400px; /* Ajuste do pseudo-elemento */
     max-width: 400px;
   }
 
   .nossa-historia p {
-    /* MELHORIA RESPONSIVA: Reduzindo o tamanho do parágrafo em telas menores */
-    font-size: 18px;
+    font-size: 18px; /* Reduz o tamanho do parágrafo */
   }
 
   .nossa-historia h3 {
-    margin: auto;
-    font-size: 15px;
+    margin: auto; /* Centraliza título */
+    font-size: 15px; /* Tamanho menor */
   }
 
   .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
+    flex-direction: column; /* Links empilhados */
+    align-items: center; /* Centraliza vertical */
+    gap: 20px; /* Espaçamento entre links */
+  }
 
-    .footer-link {
-        min-width: 200px;
-        justify-content: center;
-    }
+  .footer-link {
+    min-width: 200px; /* Largura mínima */
+    justify-content: center; /* Centraliza texto e ícone */
+  }
 }
