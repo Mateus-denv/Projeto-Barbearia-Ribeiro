@@ -1,27 +1,32 @@
-@import url("/assets/css/components/backgrounds_logins.css");
+/* ====================== Importações ====================== */
+@import url("/assets/css/components/backgrounds_logins.css"); /* Fundo e efeitos visuais para logins */
 
+/* ====================== Body ====================== */
 body {
-    align-items: center;
-    height: 100vh;
+    align-items: center; /* Centraliza verticalmente elementos flex dentro do body, caso seja flex container */
+    height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
 }
 
+/* ====================== Logo Inicial ====================== */
 .logoinicial {
-    text-align: center;
+    text-align: center; /* Centraliza horizontalmente o conteúdo dentro deste container */
 }
 
+/* ====================== Imagem da Logo ====================== */
 .logo {
-    width: 500%;
-    max-width: 500px;
+    width: 500%; /* Ajuste amplo de largura, geralmente limitado pelo max-width */
+    max-width: 500px; /* Limita a largura máxima da imagem para manter proporção */
 }
 
+/* ====================== Responsividade ====================== */
 @media (max-width: 480px) {
-            .login-container {
-                width: 90%;
-                padding: 40px 30px;
-            }
-            
-            .login-title {
-                font-size: 36px;
-                letter-spacing: 4px;
-            }
+    .login-container {
+        width: 90%; /* Container ocupa 90% da largura da tela em dispositivos pequenos */
+        padding: 40px 30px; /* Espaçamento interno ajustado para telas pequenas */
+    }
+    
+    .login-title {
+        font-size: 36px; /* Diminui o tamanho do título em telas pequenas */
+        letter-spacing: 4px; /* Ajusta o espaçamento entre letras para melhor legibilidade */
+    }
 }
