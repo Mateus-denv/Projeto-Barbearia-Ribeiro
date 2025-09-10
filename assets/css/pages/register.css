@@ -1,175 +1,182 @@
-/*
-  CSS das Páginas de Login e Cadastro - Versão Refinada
-  --------------------------------------------------
-  Melhorias:
-  - Adição de variáveis CSS para fácil manutenção de cores.
-  - Estilo de :focus nos inputs para melhor experiência do usuário.
-  - Organização e limpeza do código.
-  - Design visual 100% preservado.
-*/
+/* Importa o fundo e elementos visuais específicos */
+@import url("/assets/css/components/backgrounds_logins.css"); 
 
-@import url("/assets/css/components/backgrounds_logins.css");
-
+/* ===== VARIÁVEIS CSS ===== */
 :root {
-  --text-color-primary: #cccccc;
-  --text-color-secondary: #888;
-  --border-color-default: #ffffff;
-  --border-color-focus: #ffb000; /* Cor de destaque ao clicar no input */
-  --input-bg-hover: rgba(170, 170, 170, 0.562);
-  --button-bg: rgba(131, 131, 131, 0.233);
-  --button-bg-hover: rgba(131, 131, 131, 0.4);
-  --button-border: #666;
+  --text-color-primary: #cccccc; /* Cor principal do texto */
+  --text-color-secondary: #888; /* Cor secundária do texto e links */
+  --border-color-default: #ffffff; /* Cor padrão das bordas dos inputs */
+  --border-color-focus: #ffb000; /* Cor da borda quando input está em foco */
+  --input-bg-hover: rgba(170, 170, 170, 0.562); /* Fundo ao passar o mouse no input */
+  --button-bg: rgba(131, 131, 131, 0.233); /* Fundo padrão dos botões */
+  --button-bg-hover: rgba(131, 131, 131, 0.4); /* Fundo ao passar mouse no botão */
+  --button-border: #666; /* Cor da borda dos botões */
 }
 
+/* ===== ESTILO BODY ===== */
 body {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  /* 'justify-content' e 'font-family' vêm do seu base.css */
+  display: flex; /* Flexbox para permitir alinhamento vertical */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  height: 100vh; /* Ocupa altura total da tela */
+  /* Justify-content e font-family herdados do base.css */
 }
 
+/* ===== CONTAINER DE LOGIN ===== */
 .login-container {
-  text-align: center;
-  padding: 10px;
-  width: 100%;
+  text-align: center; /* Centraliza todo o conteúdo do container */
+  padding: 10px; /* Espaçamento interno */
+  width: 100%; /* Largura total */
 }
 
+/* ===== TITULO PRINCIPAL ===== */
 h1 {
-  font-weight: 500;
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-weight: 500; /* Peso médio */
+  font-size: 50px; /* Tamanho grande para destaque */
+  margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
+/* ===== FORMULÁRIO ===== */
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  display: flex; /* Flexbox para organizar inputs em coluna */
+  flex-direction: column; /* Inputs empilhados verticalmente */
+  align-items: center; /* Centraliza inputs horizontalmente */
+  gap: 15px; /* Espaço entre inputs */
 }
 
+/* ===== INPUTS ===== */
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
-  padding: 10px;
-  width: 100%;
-  max-width: 300px; 
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid var(--border-color-default);
-  color: var(--text-color-primary);
-  outline: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: center;
+  padding: 10px; /* Espaçamento interno */
+  width: 100%; /* Ocupa largura total do container */
+  max-width: 300px; /* Limita largura máxima */
+  background: transparent; /* Fundo transparente */
+  border: none; /* Remove bordas padrão */
+  border-bottom: 2px solid var(--border-color-default); /* Bordas inferiores */
+  color: var(--text-color-primary); /* Cor do texto */
+  outline: none; /* Remove contorno padrão ao focar */
+  transition: all 0.3s ease; /* Transição suave para hover/focus */
+  font-weight: 500; /* Peso do texto */
+  text-align: center; /* Centraliza texto no input */
 }
 
+/* ===== HOVER NOS INPUTS ===== */
 input:hover {
-  background: var(--input-bg-hover);
+  background: var(--input-bg-hover); /* Fundo ao passar mouse */
 }
 
-/* MELHORIA: Adiciona feedback visual quando o usuário clica no campo */
+/* ===== FOCUS NOS INPUTS ===== */
 input:focus {
-  border-bottom-color: var(--border-color-focus);
+  border-bottom-color: var(--border-color-focus); /* Destaca borda ao focar */
 }
 
+/* ===== BOTÕES ===== */
 button {
-  background: var(--button-bg);
-  color: rgb(255, 255, 255);
-  width: 100%;
-  max-width: 250px;
-  height: 40px;
-  border: 1px solid var(--button-border);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease; /* Adicionada transição suave */
+  background: var(--button-bg); /* Cor de fundo padrão */
+  color: rgb(255, 255, 255); /* Cor do texto */
+  width: 100%; /* Largura total do container */
+  max-width: 250px; /* Limita largura máxima */
+  height: 40px; /* Altura do botão */
+  border: 1px solid var(--button-border); /* Borda do botão */
+  border-radius: 4px; /* Arredonda cantos */
+  cursor: pointer; /* Cursor ao passar mouse */
+  font-size: 16px; /* Tamanho da fonte */
+  margin-bottom: 10px; /* Espaço abaixo do botão */
+  transition: background-color 0.3s ease; /* Transição suave no hover */
 }
 
+/* ===== HOVER NOS BOTÕES ===== */
 button:hover {
-  background: var(--button-bg-hover);
+  background: var(--button-bg-hover); /* Fundo ao passar mouse */
 }
 
+/* ===== LOGO ===== */
 .logologin {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align: center; /* Centraliza logo */
+  margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
 .logologin img {
-  width: 200px;
-  max-width: 230px;
-  height: auto;
+  width: 200px; /* Largura da imagem */
+  max-width: 230px; /* Largura máxima */
+  height: auto; /* Mantém proporção */
 }
 
+/* ===== LINKS ===== */
 a {
-  color: var(--text-color-secondary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
+  color: var(--text-color-secondary); /* Cor do link */
+  text-decoration: none; /* Remove sublinhado */
+  transition: color 0.3s ease; /* Transição suave */
+  cursor: pointer; /* Cursor ao passar mouse */
 }
 
 a:hover {
-  color: #aaa;
+  color: #aaa; /* Cor ao passar mouse */
 }
 
+/* ===== TEXTOS ADICIONAIS ===== */
 .soubarbeiro {
-  color: white;
-  margin: 5px;
+  color: white; /* Cor do texto */
+  margin: 5px; /* Espaçamento ao redor */
 }
 
 .criarconta {
-  color: white;
-  margin: 30px;
+  color: white; /* Cor do texto */
+  margin: 30px; /* Espaçamento ao redor */
 }
 
+/* ===== HEADERS INTERNOS ===== */
 .login h1 {
-  margin-bottom: 0px;
+  margin-bottom: 0; /* Remove margem inferior */
 }
 
 .login h4 {
-  font-weight: 200; 
-  margin-top: 0px;
+  font-weight: 200; /* Fonte leve */
+  margin-top: 0; /* Remove margem superior */
 }
 
-/* Estilos específicos para a página de cadastro */
+/* ===== FORMULÁRIO DE CADASTRO ===== */
 .cadastro-form {
-  gap: 20px;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto 10px auto;
+  gap: 20px; /* Espaço entre campos */
+  width: 100%; /* Largura total */
+  max-width: 400px; /* Limite de largura */
+  margin: 0 auto 10px auto; /* Centraliza horizontal e define margem inferior */
 }
 
+/* ===== SEÇÕES DE DADOS ===== */
 #dadosPessoais,
 #dadosEndereco {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
+  display: flex; /* Flexbox para empilhar campos */
+  flex-direction: column; /* Campos em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  gap: 20px; /* Espaço entre campos */
+  width: 100%; /* Largura total */
 }
 
+/* ===== CHECKBOX ===== */
 .checkbox-container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Garante alinhamento perfeito */
-  gap: 10px;
-  margin: 15px 0;
-  color: var(--text-color-primary);
-  font-size: 14px;
+  display: flex; /* Flexbox para checkbox e label */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 10px; /* Espaço entre checkbox e label */
+  margin: 15px 0; /* Margem superior e inferior */
+  color: var(--text-color-primary); /* Cor do texto */
+  font-size: 14px; /* Tamanho da fonte */
 }
 
 .checkbox-container input[type="checkbox"] {
-  width: auto;
-  margin: 0;
+  width: auto; /* Mantém tamanho padrão */
+  margin: 0; /* Remove margem */
 }
 
+/* ===== RESPONSIVIDADE PARA TELAS PEQUENAS ===== */
 @media (max-width: 480px) {
   .login-container {
-    padding: 20px 10px;
+    padding: 20px 10px; /* Ajusta padding em telas pequenas */
   }
   
   h1 {
-    font-size: 38px;
+    font-size: 38px; /* Reduz tamanho do título */
   }
 }
