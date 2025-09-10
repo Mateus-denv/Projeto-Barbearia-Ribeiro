@@ -1,87 +1,59 @@
-/*
-  CSS dos Botões - Corrigido e Responsivo
-  --------------------------------------------------
-  OBS: Cores, bordas e efeitos foram mantidos.
-  As alterações focam em corrigir o bug da largura fixa.
-*/
-
-/* ========== CONTAINER DE BOTÕES ========== */
+/* Container dos botões */
 .button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  min-height: 213px;
+  display: flex;                 /* Usa flexbox para alinhar os botões */
+  flex-direction: column;        /* Organiza em coluna (um abaixo do outro) */
+  gap: 10px;                     /* Espaço entre os botões */
+  align-items: center;           /* Centraliza horizontalmente */
+  justify-content: center;       /* Centraliza verticalmente */
+  min-height: 213px;             /* Garante altura mínima */
 
-  /* CORREÇÃO: O container agora controla a largura máxima,
-     enquanto sua largura se ajusta ao espaço disponível. */
-  width: 100%;
-  max-width: 800px;
-  
-  padding: 5px;
-  position: relative;
-  
-  /* SIMPLIFICAÇÃO: Um z-index de 2 é suficiente para garantir que os botões
-     fiquem acima dos elementos de fundo (que geralmente têm z-index 0 ou 1). */
-  z-index: 2;
+  width: 100%;                   /* Ocupa toda a largura disponível */
+  max-width: 800px;              /* Mas não passa de 800px */
+  padding: 5px;                  /* Espaço interno */
+  position: relative;            /* Define contexto de posição */
+  z-index: 2;                    /* Mantém acima do fundo */
 }
 
+/* Estilo dos botões */
 .button {
-  color: #fff;
+  color: #fff;                   /* Texto branco */
+  width: 100%;                   /* Ocupa toda a largura do container */
+  height: 50px;                  /* Altura fixa */
+  font-size: 20px;               /* Tamanho da fonte */
+  font-weight: 500;              /* Espessura média */
+  letter-spacing: 1px;           /* Espaçamento entre letras */
+  text-decoration: none;         /* Remove sublinhado (para links) */
+  border-radius: 6px;            /* Bordas arredondadas */
+  cursor: pointer;               /* Cursor de "mãozinha" */
   
-  /* CORREÇÃO PRINCIPAL: A largura fixa foi trocada por 100%.
-     Agora o botão sempre ocupará todo o espaço do seu contêiner pai,
-     tornando-o perfeitamente responsivo. */
-  width: 100%;
-
-  height: 50px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-decoration: none;
-  border-radius: 6px;
-  cursor: pointer;
-  
-  /* Flexbox para centralizar texto (mantido) */
-  display: flex;
+  display: flex;                 /* Flexbox para centralizar conteúdo */
   align-items: center;
   justify-content: center;
-  
-  /* Transição suave (mantido) */
-  transition: all 0.3s ease;
-  
-  /* Estilo padrão (mantido) */
-  background: rgba(0, 0, 0, 0.51);
-  border: 1px solid #ffb000;
-  
-  /* SIMPLIFICAÇÃO: O z-index e a posição no próprio botão são desnecessários,
-     pois o .button-container já gerencia o empilhamento na página. */
-  
-  /* Garantir que seja clicável em touch devices (mantido) */
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(255, 176, 0, 0.3);
+
+  transition: all 0.3s ease;     /* Suaviza efeitos de hover/active */
+
+  background: rgba(0, 0, 0, 0.51); /* Fundo preto semi-transparente */
+  border: 1px solid #ffb000;       /* Borda amarela */
+
+  touch-action: manipulation;    /* Melhora interação em dispositivos touch */
+  -webkit-tap-highlight-color: rgba(255, 176, 0, 0.3); /* Destaque ao clicar no mobile */
 }
 
+/* Efeitos de hover e clique */
 .button:hover,
 .button:active {
-  background: rgba(0, 0, 0, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 174, 0, 0.194);
+  background: rgba(0, 0, 0, 0.25);          /* Fundo mais claro */
+  transform: translateY(-2px);              /* Efeito de "subir" */
+  box-shadow: 0 4px 8px rgba(255, 174, 0, 0.194); /* Sombra suave */
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 680px) {
-  /* MELHORIA RESPONSIVA: Em telas pequenas, o container dos botões
-     não ficará colado nas bordas da tela, tendo um respiro. */
   .button-container {
-    width: 90%;
+    width: 90%;                 /* Dá margem nas laterais */
   }
 
   .button {
-    /* CORREÇÃO: A largura fixa de 380px foi removida. A regra 'width: 100%' do estilo base já cuida da responsividade. */
-    font-size: 16px;
-    
-    /* LIMPEZA: 'min-height: 50px' era redundante, pois o botão já tem 'height: 50px'. */
+    font-size: 16px;            /* Fonte menor em telas pequenas */
   }
 }
-
