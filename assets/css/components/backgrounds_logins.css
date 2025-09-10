@@ -1,26 +1,51 @@
 /* Fundo principal com imagem */
 body::before {
     content: "";
+    /* Gera um pseudo-elemento vazio que será usado como camada de fundo */
+
     position: fixed;
+    /* Fixa o elemento em toda a tela, mesmo quando a página rola */
+
     top: 0;
     left: 0;
+    /* Garante que começa no canto superior esquerdo */
+
     width: 100%;
     height: 100%;
+    /* Ocupa toda a largura e altura da tela */
+
     background-image: url('/assets/images/backgrounds/fundo.png');
+    /* Define a imagem de fundo principal */
+
     background-size: cover;
+    /* Faz a imagem cobrir toda a área sem distorcer (pode cortar um pouco) */
+
     background-position: center;
+    /* Centraliza a imagem de fundo */
+
     opacity: 1; /* ajuste da transparência */
+    /* Define a opacidade (1 = totalmente visível, 0 = invisível) */
+
     z-index: -2;
+    /* Coloca essa camada atrás de todo o conteúdo */
 }
 
 /* Camada de gradientes sobre a imagem */
 body::after {
     content: "";
+    /* Outro pseudo-elemento vazio, desta vez para sobreposição de gradientes */
+
     position: fixed;
+    /* Também cobre a tela inteira e fica fixo */
+
     top: 0;
     left: 0;
+    /* Começa no canto superior esquerdo */
+
     width: 100%;
     height: 100%;
+    /* Cobre toda a tela */
+
     background: 
         radial-gradient(circle at 10% 100%, rgba(0, 0, 0, 0.623), transparent 40%),
         radial-gradient(circle at 90% 100%, rgba(255, 208, 0, 0.11), transparent 25%),
@@ -28,5 +53,8 @@ body::after {
         radial-gradient(circle at 100% 20%, rgba(255, 230, 3, 0.068), transparent 25%),
         radial-gradient(circle at 50% 0%, rgba(2, 2, 2, 0.521), transparent 25%),
         radial-gradient(circle at 40% 0%, rgba(255, 230, 3, 0.096), transparent 20%);
+    /* Vários gradientes radiais adicionados em diferentes posições, criando um efeito de luz e sombra sobre a imagem */
+
     z-index: -1;
+    /* Fica acima do ::before (imagem), mas ainda atrás do conteúdo da página */
 }
