@@ -1,133 +1,136 @@
 /* ========== menu ========== */
-.nav h1{
-    font-size: 48px;
-    align-items: center;
-    margin-right: 90px;
-    margin-left: 108px;
+
+/* Estilo do título dentro da nav */
+.nav h1 {
+    font-size: 48px;        /* Tamanho grande do texto do título */
+    align-items: center;     /* Alinha verticalmente (não afeta <h1> sozinho) */
+    margin-right: 90px;      /* Espaço à direita */
+    margin-left: 108px;      /* Espaço à esquerda */
 }
 
+/* Estilo da barra de navegação */
 .nav {
-    max-width: 1280px;
-    height: 70px;
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1280px;            /* Largura máxima da nav */
+    height: 70px;                 /* Altura da nav */
+    margin-inline: auto;           /* Centraliza horizontalmente */
+    display: flex;                /* Usa flexbox para organizar os elementos */
+    justify-content: space-between; /* Espaço entre itens */
+    align-items: center;           /* Centraliza verticalmente os itens */
 }
 
-.nav-list{
-    display: flex;
-    gap: 32px;
-    list-style: none;
+/* Lista de links da nav */
+.nav-list {
+    display: flex;       /* Alinha links em linha */
+    gap: 32px;           /* Espaço entre links */
+    list-style: none;    /* Remove marcadores de lista */
 }
 
-.nav-list a{
-    font-size: 18px;
-    color: white;
-    padding-block: 16px;
-    text-decoration: none;
+/* Links dentro da nav */
+.nav-list a {
+    font-size: 18px;          /* Tamanho da fonte */
+    color: white;             /* Cor do texto */
+    padding-block: 16px;      /* Espaço vertical interno (topo e base) */
+    text-decoration: none;    /* Remove sublinhado */
 }
 
+/* Logo dentro da lista (geralmente escondido em desktop) */
 .nav-list img {
-    display: none;
-    border: none;
-    background: none;
+    display: none;           /* Esconde por padrão */
+    border: none;            /* Remove borda */
+    background: none;        /* Remove fundo */
 }
 
+/* Botão "hamburger" para menu mobile */
 .hamburger {
-    display: none;
-    border: none;
-    background: none;
-    border-top: 3px solid #ffb700;
-    cursor: pointer;
+    display: none;           /* Inicialmente escondido (desktop) */
+    border: none;             /* Remove borda */
+    background: none;         /* Remove fundo */
+    border-top: 3px solid #ffb700; /* Linha principal do ícone */
+    cursor: pointer;          /* Cursor de clique */
 }
 
+/* Linhas adicionais do hamburger */
 .hamburger::after,
 .hamburger::before {
-  content: " ";
-  display: block;
-  width: 30px;
-  height: 3px;
-  background: #fff;
-  margin-top: 5px;
-  position: relative;
-  transition: 0.3s;
+    content: " ";             /* Conteúdo necessário para pseudo-elementos */
+    display: block;           /* Exibe como bloco */
+    width: 30px;              /* Largura da linha */
+    height: 3px;              /* Altura da linha */
+    background: #fff;         /* Cor branca */
+    margin-top: 5px;          /* Espaço entre as linhas */
+    position: relative;       /* Posição relativa para transformações */
+    transition: 0.3s;         /* Transição suave ao abrir/fechar */
 }
 
+/* ====================== Media Query (telas pequenas) ====================== */
 @media (max-width: 750px) {
-  .hamburger {
-    display: block;
-    z-index: 11 !important; /* Forçar prioridade máxima */
-  }
 
-  .nav-list img{
-    display: block;
-    width: 150px;
-  }
+    /* Mostrar botão hamburger */
+    .hamburger {
+        display: block;
+        z-index: 11 !important; /* Força prioridade máxima acima de outros elementos */
+    }
 
-  .nav-list {
+    /* Mostrar logo dentro da lista no mobile */
+    .nav-list img {
+        display: block;
+        width: 150px;           /* Largura da logo */
+    }
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    /* Estilo da lista de links no mobile */
+    .nav-list {
+        position: fixed;        /* Fixa na tela inteira */
+        top: 0;
+        left: 0;
+        width: 100vw;           /* Largura total da tela */
+        height: 100vh;          /* Altura total da tela */
+        background: rgba(0, 0, 0, 0.777); /* Fundo semi-transparente */
+        backdrop-filter: blur(5px);       /* Efeito de blur atrás da nav */
+        clip-path: circle(100px at 90% -15%); /* Inicialmente fechado */
+        transition: 1s ease-out;           /* Transição suave */
+        flex-direction: column;            /* Links empilhados verticalmente */
+        justify-content: center;           /* Centraliza verticalmente */
+        align-items: center;               /* Centraliza horizontalmente */
+        gap: 1;                            /* Espaço entre itens (pequeno) */
+        pointer-events: none;              /* Desativa clique quando fechado */
+        z-index: 10 !important;            /* Prioridade máxima */
+    }
 
-    background: rgba(0, 0, 0, 0.777);
-    backdrop-filter: blur(5px);
-    clip-path: circle(100px at 90% -15%);
-    clip-path: circle(100px at 90% -15%);
-    transition: 1s ease-out;
+    /* Links mobile */
+    .nav-list a {
+        font-size: 24px;        /* Tamanho maior */
+        opacity: 0;             /* Inicialmente invisível */
+    }
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1;
+    /* Delays de transição para animação em cascata */
+    .nav-list li:nth-child(1) a { transition: 0.5s 0.2s; }
+    .nav-list li:nth-child(2) a { transition: 0.5s 0.4s; }
+    .nav-list li:nth-child(3) a { transition: 0.5s 0.6s; }
 
-    pointer-events: none;
-    z-index: 10 !important; /* Forçar prioridade máxima */
-  }
-  .nav-list a {
-    font-size: 24px;
-    opacity: 0;
-  }
+    /* ====================== Estilos ativos (menu aberto) ====================== */
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%); /* Expande o menu */
+        pointer-events: all;                  /* Permite clique */
+    }
 
-  .nav-list li:nth-child(1) a {
-    transition: 0.5s 0.2s;
-  }
+    .nav.active .nav-list a {
+        opacity: 1;                            /* Mostra links */
+    }
 
-  .nav-list li:nth-child(2) a {
-    transition: 0.5s 0.4s;
-  }
+    /* Hamburger quando o menu está aberto */
+    .nav.active .hamburger {
+        position: fixed;
+        top: 29px;
+        right: 16px;
+        border-top-color: transparent;         /* Oculta linha principal */
+    }
 
-  .nav-list li:nth-child(3) a {
-    transition: 0.5s 0.6s;
-  }
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);             /* Rotaciona linha para formar X */
+    }
 
-  /* Estilos ativos */
-
-  .nav.active .nav-list {
-    clip-path: circle(1500px at 90% -15%);
-    pointer-events: all;
-  }
-
-  .nav.active .nav-list a {
-    opacity: 1;
-  }
-
-  .nav.active .hamburger {
-    position: fixed;
-    top: 29px;
-    right: 16px;
-    border-top-color: transparent;
-  }
-
-  .nav.active .hamburger::before {
-    transform: rotate(135deg);
-  }
-
-  .nav.active .hamburger::after {
-    transform: rotate(-135deg);
-    top: -7px;
-  }
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);            /* Rotaciona linha para formar X */
+        top: -7px;                             /* Ajuste vertical */
+    }
 }
