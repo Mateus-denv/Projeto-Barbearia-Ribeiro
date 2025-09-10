@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Barbearia Ribeiro</title>
+    <!-- Seus links de CSS originais -->
     <link rel="stylesheet" href="/assets/css/base/style.css">
     <link rel="stylesheet" href="/assets/css/pages/login.css">
+    
+    <!-- Link para a fonte Jost -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
@@ -13,34 +16,42 @@
     
 </head>
 <body>
-
     <div class="login-container">
-    
+    <!-- Container principal que agrupa todo o conteúdo da página de login -->
         <div class="logologin">
-        <img src="/assets/images/logos/ribeirobarbelogowhite.png" alt="Logo Barbearia Ribeiro white"    class="logologin">
+        <!-- Div para exibir o logo -->
+            <img src="/assets/images/logos/ribeirobarbelogowhite.png" 
+                 alt="Logo Barbearia Ribeiro white" 
+                 class="logologin">
+            <!-- Imagem do logo da barbearia com classe de estilo e texto alternativo -->
         </div>
+        <div class="login">
+        <!-- Seção de apresentação do login -->
+            <h1 class="name-login">LOGIN</h1>
+            <!-- Título principal da página -->
 
-    <a href="/pages/soubarbeiro.html" class="criarconta">SOU BARBEIRO</a>
-    
-    <div class="login">
-        <h1 class="name-login">LOGIN</h1>
-        <h4>Olá, Seja bem vindo</h4>
-    </div>
-        
+            <h4>Olá, Seja bem vindo</h4>
+            <!-- Mensagem de boas-vindas -->
+        </div>
         <!-- Formulário de login com ID para identificação via JavaScript -->
         <form id="loginForm">
             <input type="text" placeholder="Nome Usuário" required>
+            <!-- Campo para digitar o nome de usuário, obrigatório -->
+
             <input type="password" placeholder="Senha" required>
-            <!-- OU para abrir em nova aba -->
-        <a href="/pages/forgotpassword.html" target="_self"
-        class="esqueci-senha">Esqueci a senha</a>
+            <!-- Campo para digitar a senha, obrigatório -->
+
+            <!-- Link para página de recuperação de senha -->
+            <a href="/pages/forgotpassword.html" target="_self" class="esqueci-senha">
+                Esqueci a senha
+            </a>
             <!-- Botão de submissão do formulário -->
-             <div class="button-container">
-                <button class=button type="submit">Entrar</button>
+            <div class="button-container">
+                <button class="button" type="submit">Entrar</button>
             </div>
         </form>
-
-    <a href="/pages/register.html" class="criarconta">Não tenho cadastro</a>
+        <!-- Link para página de cadastro de novo usuário -->
+        <a href="/pages/register.html" class="criarconta">Não tenho cadastro</a>
     </div>
 </body>
 </html>
