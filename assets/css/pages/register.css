@@ -1,5 +1,5 @@
 /* Importa o fundo e elementos visuais específicos */
-@import url("/assets/css/components/backgrounds_logins.css"); 
+@import url("../assets/css/components/backgrounds_logins.css"); 
 
 /* ===== VARIÁVEIS CSS ===== */
 :root {

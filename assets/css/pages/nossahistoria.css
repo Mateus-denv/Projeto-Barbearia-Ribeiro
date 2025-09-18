@@ -1,7 +1,7 @@
 /* ===== FONTE PERSONALIZADA ===== */
 @font-face {
     font-family: 'MinhaFonte'; /* Nome da fonte para uso no CSS */
-    src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype'); /* Arquivo da fonte */
+    src: url('../assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype'); /* Arquivo da fonte */
     font-weight: 900; /* Peso da fonte */
     font-style: oblique; /* Estilo inclinado */
 }
@@ -35,7 +35,7 @@ body {
     position: absolute; /* Posicionamento absoluto */
     top: 50%; left: 50%; /* Centraliza vertical e horizontal */
     width: 120%; height: 120%; /* Largura e altura maiores que 100% para efeito visual */
-    background-image: url('/assets/images/gallery/test1.jpg'); /* Imagem de fundo */
+    background-image: url('../assets/images/gallery/test1.jpg'); /* Imagem de fundo */
     background-size: cover; /* Ajusta imagem ao container */
     background-position: center; /* Centraliza a imagem */
     transform: translate(-50%, -50%) scale(1); /* Centraliza e mantém escala */
@@ -96,7 +96,7 @@ body {
 .journey-section {
     padding: 120px 20px; 
     position: relative; 
-    background-image: url('/assets/images/backgrounds/textura.png'); 
+    background-image: url('../assets/images/backgrounds/textura.png'); 
     background-size: cover;
     background-attachment: fixed;
 }
