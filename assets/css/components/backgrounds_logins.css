@@ -14,15 +14,8 @@ body::before {
     height: 100%;
     /* Ocupa toda a largura e altura da tela */
 
-    background-image: url('/assets/images/backgrounds/fundo.png');
-    /* Define a imagem de fundo principal */
-
-    background-size: cover;
-    /* Faz a imagem cobrir toda a área sem distorcer (pode cortar um pouco) */
-
-    background-position: center;
-    /* Centraliza a imagem de fundo */
-
+    background-color: black;
+    
     opacity: 1; /* ajuste da transparência */
     /* Define a opacidade (1 = totalmente visível, 0 = invisível) */
 
