@@ -1,5 +1,5 @@
 /* Importa o fundo e elementos visuais específicos */
-@import url("../assets/css/components/backgrounds_logins.css"); 
+@import url("../components/backgrounds_logins.css"); 
 
 /* ===== VARIÁVEIS CSS ===== */
 :root {
@@ -24,6 +24,7 @@ body {
 /* ===== CONTAINER DE LOGIN ===== */
 .login-container {
   text-align: center; /* Centraliza todo o conteúdo do container */
+  justify-items: center;
   padding: 10px; /* Espaçamento interno */
   width: 100%; /* Largura total */
 }
