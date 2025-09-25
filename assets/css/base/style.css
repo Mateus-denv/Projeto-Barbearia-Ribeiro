@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Jost';
-  src: url('../assets/Fonts/Jost-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/Fonts/Jost-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900; /* aceita do Thin até Black */
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 
 body {
   color: white;
-  background-color: gray;
+  background-color: rgb(37, 37, 37);
   display: flex;
   justify-content: center;
   font-family: "Jost", sans-serif;
