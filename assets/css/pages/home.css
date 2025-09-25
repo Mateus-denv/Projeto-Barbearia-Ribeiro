@@ -1,15 +1,15 @@
 /* ====================== Imports ====================== */
 /* Importa estilos do carrossel */
-@import url("../assets/css/components/carousel.css");
+@import url("../components/carousel.css");
 /* Importa estilos do menu */
-@import url("../assets/css/components/menu.css");
+@import url("../components/menu.css");
 /* Importa estilos dos botões */
-@import url("../assets/css/components/buttons.css");
+@import url("../components/buttons.css");
 
 /* ====================== Fonte customizada ====================== */
 @font-face {
   font-family: 'MinhaFonte'; /* Nome da fonte */
-  src: url('../assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype'); /* Caminho da fonte */
+  src: url('/assets/Fonts/EFCO-Brookshire-Regular.ttf') format('truetype'); /* Caminho da fonte */
   font-weight: 900; /* Peso da fonte */
   font-style: oblique; /* Estilo oblíquo */
 }
@@ -46,7 +46,7 @@ main::before {
   content: ""; /* Elemento vazio */
   position: absolute; /* Posicionamento absoluto */
   inset: 0; /* Top, bottom, left, right = 0 */
-  background: url("../assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat; /* Fundo com imagem centralizada e cover */
+  background: url("/assets/images/backgrounds/fundo-inicial-desktop.jpg") center/cover no-repeat; /* Fundo com imagem centralizada e cover */
   opacity: 0.5; /* Transparência */
   z-index: 0; /* Camada abaixo do conteúdo */
 }
@@ -56,7 +56,7 @@ main::after {
   content: ""; /* Elemento vazio */
   position: absolute; /* Posicionamento absoluto */
   inset: 0; /* Top, bottom, left, right = 0 */
-  background: url("../assets/images/backgrounds/textura.png") center/cover no-repeat; /* Fundo textura */
+  background: url("/assets/images/backgrounds/textura.png") center/cover no-repeat; /* Fundo textura */
   opacity: 0.15; /* Transparência baixa */
   z-index: 0; /* Mesma camada da imagem */
 }
@@ -263,7 +263,7 @@ h3 {
 @media (max-width: 680px) {
   /* Fundo mobile */
   main::before {
-    background-image: url("../assets/images/backgrounds/fundo-inicial-mobile.jpg");
+    background-image: url("/assets/images/backgrounds/fundo-inicial-mobile.jpg");
   }
 
   header{
