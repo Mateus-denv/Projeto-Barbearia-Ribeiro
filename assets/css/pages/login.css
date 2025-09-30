@@ -75,7 +75,7 @@ input:hover {
 }
 
 .logologin img {
-  max-width: 200px; /* Limite máximo da imagem */
+  max-width: 700px; /* Limite máximo da imagem */
   width: 100%; /* Permite que a imagem diminua proporcionalmente */
   height: auto; /* Mantém a proporção da imagem */
 }
